@@ -107,8 +107,25 @@ public class Monster {
 	public int getMonsterStrength() {
 		return monsterStrength;
 	}
+	
 	public String getMonsterName() {
 		return monsterName;
+	}
+	
+	public void changeMonsterHealthPoints(int i) {
+		monsterHealthPoints+=i;
+	}
+	
+	public boolean getMonsterAlive() {
+		return monsterAlive;
+	}
+	
+	public void kill() {
+		monsterAlive = false;
+	}
+	
+	public int getMonsterHealthPonts() {
+		return monsterHealthPoints;
 	}
 	
 	private void slime() {

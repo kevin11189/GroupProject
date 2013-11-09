@@ -30,13 +30,12 @@ public class Hero {
 	public boolean getHeroAlive() {
 		return heroAlive;
 	}
-	public void fight(Monster m) {
-		System.out.println(heroName + " is fighting a " + m.getMonsterName());
-		if (this.heroStrength > m.getMonsterStrength()) {
-			System.out.println("stronger");
-		}
-		else {
-			System.out.println("weaker");
+	public void heroFight(Monster m) {
+		m.changeMonsterHealthPoints(- heroStrength);
+		System.out.println(m.getMonsterHealthPonts());
+		if (m.getMonsterHealthPonts() <= 0) {
+			System.out.println("Monster dead...");
+			m.kill();
 		}
 	}
 }

@@ -9,9 +9,17 @@ public class Party {
 		player3 = new Rogue(rogue);
 	}
 	
-	public void fight(Monster m) {
-		player1.fight(m);
-		player2.fight(m);
-		player3.fight(m);
+	public void partyFight(Monster m) {
+		
+		if (player1.getHeroAlive()){
+			player1.heroFight(m);
+		}
+		if (player2.getHeroAlive()) {
+			player2.heroFight(m);
+		}
+		if (player3.getHeroAlive()) {
+			player3.heroFight(m);
+		}
+
 	}
 }
