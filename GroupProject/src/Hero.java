@@ -31,13 +31,29 @@ public class Hero {
 		return heroAlive;
 	}
 	public void heroFight(Monster m) {
-		m.changeMonsterHealthPoints(- heroStrength);
-		System.out.println(m.getMonsterHealthPonts());
-		if (m.getMonsterHealthPonts() <= 0) {
-			System.out.println("Monster dead...");
-			m.kill();
-		}
+		if (m.getMonsterAlive()) {
+            System.out.println(heroName + " attacks " + m.getMonsterName() + " for " + heroStrength);
+            m.changeMonsterHealthPoints(- heroStrength);
+            System.out.println(m.getMonsterHealthPonts());
+        }
+
 	}
+    public void changeHeroHealthPoints(int i) {
+        heroHealthPoints+=i;
+        if (heroHealthPoints <= 0) {
+            System.out.println(heroName + " is dead.");
+            heroKill();
+        }
+
+    }
+
+    public void heroKill() {
+        heroAlive = false;
+    }
+
+    public int getHeroHealthPoints() {
+        return heroHealthPoints;
+    }
 }
 
 class Warrior extends Hero {

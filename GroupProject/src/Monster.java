@@ -114,63 +114,76 @@ public class Monster {
 	
 	public void changeMonsterHealthPoints(int i) {
 		monsterHealthPoints+=i;
+        if (monsterHealthPoints <= 0) {
+            System.out.println(monsterName + " is dead.");
+            monsterKill();
+        }
 	}
 	
 	public boolean getMonsterAlive() {
 		return monsterAlive;
 	}
 	
-	public void kill() {
+	public void monsterKill() {
 		monsterAlive = false;
 	}
+
+    public void monsterFight(Hero h) {
+        if (h.getHeroAlive()) {
+            System.out.println(monsterName + " attacks " + h.getHeroName() + " for " + monsterStrength);
+            h.changeHeroHealthPoints(- monsterStrength);
+            System.out.println(h.getHeroHealthPoints());
+        }
+    }
 	
 	public int getMonsterHealthPonts() {
 		return monsterHealthPoints;
 	}
 	
 	private void slime() {
-			monsterTypeInt = 1;
-			monsterName = "slime";
-			monsterHealthPoints = random.nextInt(2) + 1;
-			monsterStrength = random.nextInt(2) + 1;
-			monsterIntelligence = random.nextInt(1) + 1;
-			monsterAgility = random.nextInt(1) + 1;
+		monsterTypeInt = 1;
+		monsterName = "slime";
+		monsterHealthPoints = random.nextInt(2) + 1;
+		monsterStrength = random.nextInt(2) + 1;
+		monsterIntelligence = random.nextInt(1) + 1;
+		monsterAgility = random.nextInt(1) + 1;
 	}
 	
 	private void orc()  {
-			monsterTypeInt = 2;
-			monsterName = "orc";
-			monsterHealthPoints = random.nextInt(2) + 2;
-			monsterStrength = random.nextInt(3) + 2;
-			monsterIntelligence = random.nextInt(3) + 2;
-			monsterAgility = random.nextInt(3) + 2;
+		monsterTypeInt = 2;
+		monsterName = "orc";
+		monsterHealthPoints = random.nextInt(2) + 2;
+		monsterStrength = random.nextInt(3) + 2;
+		monsterIntelligence = random.nextInt(3) + 2;
+		monsterAgility = random.nextInt(3) + 2;
 	}
 	
 	private void skeleton() {
-			monsterTypeInt = 3;
-			monsterName = "skeleton";
-			monsterHealthPoints = random.nextInt(3) + 3;
-			monsterStrength = random.nextInt(4) + 3;
-			monsterIntelligence = random.nextInt(4) + 3;
-			monsterAgility = random.nextInt(4) + 3;
+		monsterTypeInt = 3;
+		monsterName = "skeleton";
+		monsterHealthPoints = random.nextInt(3) + 3;
+		monsterStrength = random.nextInt(4) + 3;
+		monsterIntelligence = random.nextInt(4) + 3;
+		monsterAgility = random.nextInt(4) + 3;
 	}
 	
 	private void zombie() {
-			monsterTypeInt = 4;
-			monsterName = "zombie";
-			monsterHealthPoints = random.nextInt(5) + 3;
-			monsterStrength = random.nextInt(3) + 5;
-			monsterIntelligence = random.nextInt(3) + 1;
-			monsterAgility = random.nextInt(3) + 2;
+		monsterTypeInt = 4;
+		monsterName = "zombie";
+		monsterHealthPoints = random.nextInt(5) + 3;
+		monsterStrength = random.nextInt(3) + 5;
+		monsterIntelligence = random.nextInt(3) + 1;
+		monsterAgility = random.nextInt(3) + 2;
 	}
 	
 	private void demon() {
-			monsterTypeInt = 5;
-			monsterName = "demon";
-			monsterHealthPoints = random.nextInt(6) + 4;
-			monsterStrength = random.nextInt(5) + 7;
-			monsterIntelligence = random.nextInt(4) + 4;
-			monsterAgility = random.nextInt(4) + 1;
+		monsterTypeInt = 5;
+		monsterName = "demon";
+		//monsterHealthPoints = random.nextInt(6) + 4;
+		monsterHealthPoints = 100;
+        monsterStrength = random.nextInt(5) + 7;
+		monsterIntelligence = random.nextInt(4) + 4;
+		monsterAgility = random.nextInt(4) + 1;
 			
 	}
 }

@@ -7,9 +7,8 @@ public class GroupProject {
 		
 		Party party = new Party("Kevin", "Jessica", "Sadie");
 		
-		party.partyFight(new Monster());
+		party.partyFight(new Monster("Demon"));
 
-		
 	}
 
 }
