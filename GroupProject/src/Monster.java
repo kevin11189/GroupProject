@@ -132,7 +132,7 @@ public class Monster {
         if (h.getHeroAlive()) {
 			if ( random.nextInt(19) <= monsterAgility) {
 				System.out.println(monsterName + " attacks " + h.getHeroName() + " for " + monsterStrength);
-				h.changeHeroHealthPoints(- monsterStrength);
+				h.changeHeroHealthPoints(- ((int)Math.round((double)monsterStrength/3.0) + h.getHeroArmor()));
 				System.out.println(h.getHeroHealthPoints());
 			} else {
 				System.out.println(monsterName + " missed.");
