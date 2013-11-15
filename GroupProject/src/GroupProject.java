@@ -9,7 +9,7 @@ public class GroupProject {
 		
 		party.partyFight(new Monster("Demon"));
 
-        new Panel();
+        //new Panel();
 	}
 
 }

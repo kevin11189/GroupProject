@@ -32,9 +32,13 @@ public class Hero {
 	}
 	public void heroFight(Monster m) {
 		if (m.getMonsterAlive()) {
-            System.out.println(heroName + " attacks " + m.getMonsterName() + " for " + heroStrength);
-            m.changeMonsterHealthPoints(- heroStrength);
-            System.out.println(m.getMonsterHealthPonts());
+			if ( (random.nextInt(19) + 1) <= heroAgility) {
+				System.out.println(heroName + " attacks " + m.getMonsterName() + " with " + heroStrength + " strength divided by three rounded up.");
+				m.changeMonsterHealthPoints(- (int)Math.round((double)heroStrength/3.0));
+    	        System.out.println(m.getMonsterHealthPonts());
+			} else {
+				System.out.println(heroName + " missed");
+			}
         }
 
 	}
