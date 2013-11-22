@@ -1,37 +1,117 @@
+import javax.swing.*;
+
 public class Party {
 
-	public Warrior player1;
-	public Wizard player2;
-	public Rogue player3;
+	private Hero[] party;
+	private int x, y;
+	public Party(int players) {
+		party = new Hero[players];
+		x = 1;
+		y = 1;
+		for(int i = 0; i < party.length; i++)
+		{
+			party[i] = new Hero(JOptionPane.showInputDialog("Enter a name for player " + (i + 1) + "."));
+		}
 
-	public Party(String warrior, String wizard, String rogue) {
-		player1 = new Warrior(warrior);
-		player2 = new Wizard(wizard);
-		player3 = new Rogue(rogue);
+		for(int i = 0; i < party.length; i++)
+		{
+			System.out.println(party[i].getHeroName() + "\n" +
+					party[i].getHeroStrength() + "\n" +
+					party[i].getHeroIntelligence() + "\n" +
+					party[i].getHeroAgility() + "\n" +
+					party[i].getHeroHealth() + "\n" +
+					party[i].getHeroArmor() + "\n" +
+					party[i].getHeroWeapon() + "\n" +
+					party[i].getHeroWeaponName() + "\n" +
+					party[i].getHeroArmorName() + "\n" +
+					party[i].getHeroGold()
+			);
+		}
 	}
 
-	public void partyFight(Monster m) {
-		while (m.getMonsterAlive() && (player1.getHeroAlive() || player2.getHeroAlive() || player3.getHeroAlive()))  {
-            if (player1.getHeroAlive()){
-                player1.heroFight(m);
-            }
-            if (player2.getHeroAlive()) {
-                player2.heroFight(m);
-            }
-            if (player3.getHeroAlive()) {
-                player3.heroFight(m);
-            }
-            if (m.getMonsterAlive()) {
-                if (player1.getHeroAlive()) {
-                    m.monsterFight(player1);
-                } else if (player2.getHeroAlive()) {
-                    m.monsterFight(player2);
-                } else if (player3.getHeroAlive()) {
-                    m.monsterFight(player3);
-                } else {
-                    System.out.println("There is an error in the death of a character. All dead, but still going to fight sequence.");
-                }
-            }
-        }
+	public void partyFight( Monster m) {
+		if (m.isMonsterAlive() && ( getHero(0).isHeroAlive() || getHero(1).isHeroAlive() || getHero(2).isHeroAlive() ) ) {
+			if (getHero(0).isHeroAlive() && m.isMonsterAlive()) {
+				getHero(0).heroFight(m);
+			} else {
+				getHero(0).setHeroAttack(false);
+			}
+			if (getHero(1).isHeroAlive() && m.isMonsterAlive()) {
+				getHero(1).heroFight(m);
+			} else {
+				getHero(1).setHeroAttack(false);
+			}
+			if (getHero(2).isHeroAlive() && m.isMonsterAlive()) {
+				getHero(2).heroFight(m);
+			} else {
+				getHero(2).setHeroAttack(false);
+			}
+			if (m.isMonsterAlive()) {
+				m.setMonsterAttacked(true);
+				if (getHero(0).isHeroAlive()) {
+					m.setMonsterTarget(getHero(0).getHeroName());
+					m.monsterFight(getHero(0));
+				} else if (getHero(1).isHeroAlive()) {
+					m.setMonsterTarget(getHero(1).getHeroName());
+					m.monsterFight(getHero(1));
+				} else if (getHero(2).isHeroAlive()) {
+					m.setMonsterTarget(getHero(2).getHeroName());
+					m.monsterFight(getHero(2));
+				}
+			} else {
+				m.setMonsterAttacked(false);
+			}
+		}
+		if (!m.isMonsterAlive()) {
+			Main.getWindow().startMove();
+			Main.getWindow().stopCombatButtons();
+		}
+		if (!(getHero(0).isHeroAlive() && getHero(1).isHeroAlive() && getHero(2).isHeroAlive())) {
+			Main.getWindow().stopMove();
+			Main.getWindow().stopCombatButtons();
+			JOptionPane.showMessageDialog(null, "YOU LOSE BITCH");
+		}
+		Main.getWindow().updateCombatLog();
 	}
+
+	public Hero getHero(int i) {
+		return party[i];
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void addX(int x) {
+		this.x += x;
+		if ( this.x < 0 ) {
+			this.x = 0;
+		} else if ( this.x > 2) {
+			this.x = 2;
+		} else {
+			Main.newMonster();
+			Main.getWindow().stopMove();
+			Main.getWindow().startCombatButtons();
+			Main.getWindow().changeStats(this);
+		}
+	}
+
+	public void addY(int y) {
+		this.y += y;
+		if ( this.y < 0 ) {
+			this.y = 0;
+		} else if ( this.y > 4 ) {
+			this.y = 4;
+		} else {
+			Main.newMonster();
+			Main.getWindow().stopMove();
+			Main.getWindow().startCombatButtons();
+			Main.getWindow().changeStats(this);
+		}
+	}
+
 }
