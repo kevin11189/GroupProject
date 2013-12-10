@@ -34,12 +34,20 @@ public class Monster {
 	}
 
 	private void slime() {
+//		monsterName = "slime";
+//		monsterHealthPoints = random.nextInt(2) + 1;
+//		monsterMaxHealthPoints = monsterHealthPoints;
+//		monsterStrength = random.nextInt(2) + 1;
+//		monsterIntelligence = random.nextInt(1) + 1;
+//		monsterAgility = random.nextInt(1) + 1;
+//		monsterGold = random.nextInt(20) + 10;
+//		monsterEquipment = random.nextInt(10);
 		monsterName = "slime";
-		monsterHealthPoints = random.nextInt(2) + 1;
+		monsterHealthPoints = random.nextInt(22) + 1;
 		monsterMaxHealthPoints = monsterHealthPoints;
-		monsterStrength = random.nextInt(2) + 1;
-		monsterIntelligence = random.nextInt(1) + 1;
-		monsterAgility = random.nextInt(1) + 1;
+		monsterStrength = random.nextInt(22) + 1;
+		monsterIntelligence = random.nextInt(21) + 1;
+		monsterAgility = random.nextInt(21) + 1;
 		monsterGold = random.nextInt(20) + 10;
 		monsterEquipment = random.nextInt(10);
 	}

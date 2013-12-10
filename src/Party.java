@@ -4,13 +4,14 @@ import java.util.Random;
 public class Party {
 
 	private Hero[] party;
-	private int x, y, randomPlayer;
-	private boolean running, successfulGoldPickup;
+	private int x, y, randomPlayer, roomsTraveled;
+	private boolean running, successfulGoldPickup, findingGold;
 	private Random random = new Random();
 	public Party(int players) {
 		party = new Hero[players];
 		x = 1;
 		y = 1;
+		roomsTraveled = 0;
 		for(int i = 0; i < party.length; i++)
 		{
 			party[i] = new Hero(JOptionPane.showInputDialog("Enter a name for player " + (i + 1) + "."));
@@ -55,7 +56,7 @@ public class Party {
 		if (!getHero(0).isHeroAlive() && !getHero(1).isHeroAlive() && !getHero(2).isHeroAlive()) {
 			Main.getWindow().stopMove();
 			Main.getWindow().stopCombatButtons();
-			JOptionPane.showMessageDialog(null, "YOU LOSE BITCH");
+			JOptionPane.showMessageDialog(null, "You have travelled " + roomsTraveled + " rooms." + Main.getParty().getHero(0).getHeroName() + " has found " + Main.getParty().getHero(0).getHeroGold() + "." + Main.getParty().getHero(1).getHeroName() + " has found " + Main.getParty().getHero(1).getHeroGold() + "." + Main.getParty().getHero(2).getHeroName() + " has found " + Main.getParty().getHero(2).getHeroGold() + ".");
 		}
 		Main.getWindow().updateCombatLog();
 	}
@@ -90,6 +91,7 @@ public class Party {
 		} else if ( this.x > 2) {
 			this.x = 2;
 		} else {
+			roomsTraveled++;
 			Main.newMonster();
 			Main.getWindow().stopMove();
 			Main.getWindow().startCombatButtons();
@@ -105,6 +107,7 @@ public class Party {
 		} else if ( this.y > 4 ) {
 			this.y = 4;
 		} else {
+			roomsTraveled++;
 			Main.newMonster();
 			Main.getWindow().stopMove();
 			Main.getWindow().startCombatButtons();
@@ -114,14 +117,19 @@ public class Party {
 	}
 
 	public void dropGold() {
-		randomPlayer = random.nextInt(3);
-		if (Main.getParty().getHero(randomPlayer).getHeroIntelligence() >= random.nextInt(20)) {
-			successfulGoldPickup = true;
-			Main.getParty().getHero(randomPlayer).addHeroGold(Main.getMonster().getMonsterGold());
-		} else {
-			successfulGoldPickup = false;
+		findingGold = true;
+		while(findingGold) {
+			randomPlayer = random.nextInt(3);
+			if (Main.getParty().getHero(randomPlayer).isHeroAlive()) {
+				if (Main.getParty().getHero(randomPlayer).getHeroIntelligence() >= random.nextInt(20)) {
+					successfulGoldPickup = true;
+					Main.getParty().getHero(randomPlayer).addHeroGold(Main.getMonster().getMonsterGold());
+				} else {
+					successfulGoldPickup = false;
+				}
+				findingGold = false;
+			}
 		}
-
 	}
 
 	public int getRandomPlayer() {
