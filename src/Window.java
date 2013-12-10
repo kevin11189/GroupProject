@@ -5,7 +5,15 @@ import javax.swing.*;
 
 public class Window extends JFrame {
 	public JFrame frame = new JFrame("RPG Project");
-	private JPanel panel1, panel2, panel3, panel4, panel5, combatTextPanel, combatButtonPanel, directionPanel, lootPanel, equipButtonPanel;
+    private JPanel panel2;
+    private JPanel panel3;
+    private JPanel panel4;
+    private JPanel panel5;
+    private JPanel combatTextPanel;
+    private JPanel combatButtonPanel;
+    private JPanel directionPanel;
+    private JPanel lootPanel;
+    private JPanel equipButtonPanel;
 	private static JPanel[][] miniMap;
 	private JLabel player0Name, player0Health, player0Strength, player0Intelligence, player0Agility, player0Armor, player0Weapon, player0Gold;
 	private JLabel player1Name, player1Health, player1Strength, player1Intelligence, player1Agility, player1Armor, player1Weapon, player1Gold;
@@ -25,8 +33,7 @@ public class Window extends JFrame {
 		stopEquip();
 	}
 	public void addComponentsToPane(Container pane, Party p) {
-		JPanel panelIn;
-		JButton button;
+
 		JLabel label;
 		int x = p.getX();
 		int y = p.getY();
@@ -35,7 +42,7 @@ public class Window extends JFrame {
 		pane.setBounds(0,0,800,600);
 		pane.setPreferredSize(new Dimension(800,600));
 		//panel1
-		panel1 = new JPanel(new GridLayout(0,2));
+        JPanel panel1 = new JPanel(new GridLayout(0, 2));
 		panel1.setBackground(Color.BLACK);
 		panel1.setBounds(15, 15, 250, 280);
 		//name

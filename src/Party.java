@@ -15,21 +15,6 @@ public class Party {
 		{
 			party[i] = new Hero(JOptionPane.showInputDialog("Enter a name for player " + (i + 1) + "."));
 		}
-
-		for(int i = 0; i < party.length; i++)
-		{
-			System.out.println(party[i].getHeroName() + "\n" +
-					party[i].getHeroStrength() + "\n" +
-					party[i].getHeroIntelligence() + "\n" +
-					party[i].getHeroAgility() + "\n" +
-					party[i].getHeroHealth() + "\n" +
-					party[i].getHeroArmor() + "\n" +
-					party[i].getHeroWeapon() + "\n" +
-					party[i].getHeroWeaponName() + "\n" +
-					party[i].getHeroArmorName() + "\n" +
-					party[i].getHeroGold()
-			);
-		}
 	}
 
 	public void partyFight( Monster m) {
@@ -77,7 +62,6 @@ public class Party {
 
 	public void partyRun() {
 		running = true;
-		System.out.println("RUN!");
 		Main.getMonster().monsterFight(Main.getParty());
 		Main.getWindow().updateCombatLog();
 		Main.getWindow().startMove();

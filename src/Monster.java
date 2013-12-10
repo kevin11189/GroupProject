@@ -28,7 +28,6 @@ public class Monster {
 				break;
 			}
 			default: {
-				System.out.println("There is an error in the monster creation process.");
 			}
 		}
 		monsterAlive = true;
@@ -143,7 +142,6 @@ public class Monster {
 					monsterHit = true;
 					this.setMonsterTarget(Main.getParty().getHero(targetPlayer).getHeroName());
 					p.getHero(targetPlayer).addHealth(- ((int)Math.ceil((double)monsterStrength/3.0) + p.getHero(targetPlayer).getHeroArmor()));
-					System.out.println(p.getHero(targetPlayer));
 				} else {
 					monsterHit = false;
 				}
