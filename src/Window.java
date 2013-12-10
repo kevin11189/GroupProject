@@ -352,20 +352,25 @@ public class Window extends JFrame {
 				panel4.add(miniMap[row][col]);
 			}
 		}
-        JPanel directionPanel = new JPanel(new GridLayout(2, 2));
-		buttonUp = new JButton("Up");
+        JPanel directionPanel = new JPanel(null);
+		directionPanel.setBounds(390, 160, 110, 110);
+		buttonUp = new JButton("\u2191");
+		buttonUp.setBounds(30, 5, 50, 30);
 		buttonUp.addActionListener(new directionListenerUp());
 		directionPanel.add(buttonUp);
-		buttonDown = new JButton("Down");
+		buttonDown = new JButton("\u2193");
+		buttonDown.setBounds(30, 70, 50, 30);
 		buttonDown.addActionListener(new directionListenerDown());
 		directionPanel.add(buttonDown);
-		buttonLeft = new JButton("Left");
+		buttonLeft = new JButton("\u2190");
+		buttonLeft.setBounds(0, 35, 50, 30);
 		buttonLeft.addActionListener(new directionListenerLeft());
 		directionPanel.add(buttonLeft);
-		buttonRight = new JButton("Right");
+		buttonRight = new JButton("\u2192");
+		buttonRight.setBounds(60, 35, 50, 30);
 		buttonRight.addActionListener(new directionListenerRight());
 		directionPanel.add(buttonRight);
-		directionPanel.setBounds(390, 160, 110, 110);
+
 		directionPanel.setBackground(Color.BLACK);
 		panel4.add(directionPanel);
 		pane.add(panel4);

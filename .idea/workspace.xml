@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Party.java" afterPath="$PROJECT_DIR$/src/Party.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window.java" afterPath="$PROJECT_DIR$/src/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GroupProject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703396043" ignored="false" />
-    <file path="/Window.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703667541" ignored="false" />
+    <file path="/Dummy.txt" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386704052816" ignored="false" />
+    <file path="/Window.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386704370913" ignored="false" />
     <file path="/Party.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703850567" ignored="false" />
     <file path="/Monster.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386687540138" ignored="false" />
     <file path="/Hero.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703117443" ignored="false" />
@@ -83,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Window.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="668" column="40" selection-start="28318" selection-end="28318" vertical-scroll-proportion="0.0">
+            <state line="369" column="43" selection-start="15490" selection-end="15490" vertical-scroll-proportion="0.8902439">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Party.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Party.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Party.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="47" selection-start="4253" selection-end="4253" vertical-scroll-proportion="0.69849247">
+            <state line="155" column="9" selection-start="4257" selection-end="4257" vertical-scroll-proportion="-27.32">
               <folding />
             </state>
           </provider>
@@ -142,8 +141,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Monster.java" />
         <option value="$PROJECT_DIR$/src/Hero.java" />
-        <option value="$PROJECT_DIR$/src/Window.java" />
         <option value="$PROJECT_DIR$/src/Party.java" />
+        <option value="$PROJECT_DIR$/src/Window.java" />
       </list>
     </option>
   </component>
@@ -412,7 +411,11 @@
       <created>1386703401770</created>
       <updated>1386703401770</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult.">
+      <created>1386704060966</created>
+      <updated>1386704060966</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -488,7 +491,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added buttons for saving and resting. They are having odd behaviors in respect to how they are disabling upon combat sequence. Going to check the behavior on my PC later to see if it's a mac thing. AWT on mac has been an unpleasant experience." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -507,6 +510,7 @@
     <MESSAGE value="Added potions&#10;Fixed demon" />
     <MESSAGE value="Dead people can no longer pickup gold." />
     <MESSAGE value="Added buttons for saving and resting. They are having odd behaviors in respect to how they are disabling upon combat sequence. Going to check the behavior on my PC later to see if it's a mac thing. AWT on mac has been an unpleasant experience." />
+    <MESSAGE value="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -579,18 +583,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="668" column="40" selection-start="28318" selection-end="28318" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="151" column="13" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Party.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="9" selection-start="4257" selection-end="4257" vertical-scroll-proportion="-27.32">
           <folding />
         </state>
       </provider>
@@ -602,10 +604,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Party.java">
+    <entry file="file://$PROJECT_DIR$/src/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="47" selection-start="4253" selection-end="4253" vertical-scroll-proportion="0.69849247">
-          <folding />
+        <state line="369" column="43" selection-start="15490" selection-end="15490" vertical-scroll-proportion="0.8902439">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
