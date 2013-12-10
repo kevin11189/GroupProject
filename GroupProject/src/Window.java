@@ -430,43 +430,59 @@ public class Window extends JFrame {
 	}
 	public void updateCombatLog() {
 		//combat
-		if (Main.getParty().getHero(0).didHeroAttack()) {
-			if (Main.getParty().getHero(0).didHeroHit()) {
-				player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(0).getHeroStrength()/3.0) + Main.getParty().getHero(0).getHeroWeapon()));//attacked hit
+		if (Main.getParty().isRunning()) {
+			player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " is running.");
+			player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " is running.");
+			player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " is running.");
+			if (Main.getMonster().isMonsterAttacked()) {
+				if (Main.getMonster().isMonsterHit()) {
+					monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget() + " for " + (int)Math.round((double)Main.getMonster().getMonsterStrength()/3.0));//attacked hit
+				} else {
+					monsterDamage.setText(Main.getMonster().getMonsterName() + " missed.");//attacked missed
+				}
 			} else {
-				player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " missed.");//attacked missed
+				monsterDamage.setText(Main.getMonster().getMonsterName() + " didn't get a chance to attack.");
 			}
 		} else {
-			player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " didn't get a chance to attack.");
-		}
-		if (Main.getParty().getHero(1).didHeroAttack()) {
-			if (Main.getParty().getHero(1).didHeroHit()) {
-				player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(1).getHeroStrength()/3.0) + Main.getParty().getHero(1).getHeroWeapon()));//attacked hit
+			if (Main.getParty().getHero(0).didHeroAttack()) {
+				if (Main.getParty().getHero(0).didHeroHit()) {
+					player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(0).getHeroStrength()/3.0) + Main.getParty().getHero(0).getHeroWeapon()));//attacked hit
+				} else {
+					player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " missed.");//attacked missed
+				}
 			} else {
-				player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " missed.");//attacked missed
+				player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " didn't get a chance to attack.");
 			}
-		} else {
-			player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " didn't get a chance to attack.");
-		}
-		if (Main.getParty().getHero(2).didHeroAttack()) {
-			if (Main.getParty().getHero(2).didHeroHit()) {
-				player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(2).getHeroStrength()/3.0) + Main.getParty().getHero(2).getHeroWeapon()));//attacked hit
+			if (Main.getParty().getHero(1).didHeroAttack()) {
+				if (Main.getParty().getHero(1).didHeroHit()) {
+					player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(1).getHeroStrength()/3.0) + Main.getParty().getHero(1).getHeroWeapon()));//attacked hit
+				} else {
+					player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " missed.");//attacked missed
+				}
 			} else {
-				player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " missed.");//attacked missed
+				player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " didn't get a chance to attack.");
 			}
-		} else {
-			player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " didn't get a chance to attack.");
-		}
-		//monster
-		if (Main.getMonster().isMonsterAttacked()) {
-			if (Main.getMonster().isMonsterHit()) {
-				monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget() + " for " + (int)Math.round((double)Main.getMonster().getMonsterStrength()/3.0));//attacked hit
+			if (Main.getParty().getHero(2).didHeroAttack()) {
+				if (Main.getParty().getHero(2).didHeroHit()) {
+					player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(2).getHeroStrength()/3.0) + Main.getParty().getHero(2).getHeroWeapon()));//attacked hit
+				} else {
+					player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " missed.");//attacked missed
+				}
 			} else {
-				monsterDamage.setText(Main.getMonster().getMonsterName() + " missed.");//attacked missed
+				player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " didn't get a chance to attack.");
 			}
-		} else {
-			monsterDamage.setText(Main.getMonster().getMonsterName() + " didn't get a chance to attack.");
+			//monster
+			if (Main.getMonster().isMonsterAttacked()) {
+				if (Main.getMonster().isMonsterHit()) {
+					monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget() + " for " + (int)Math.round((double)Main.getMonster().getMonsterStrength()/3.0));//attacked hit
+				} else {
+					monsterDamage.setText(Main.getMonster().getMonsterName() + " missed.");//attacked missed
+				}
+			} else {
+				monsterDamage.setText(Main.getMonster().getMonsterName() + " didn't get a chance to attack.");
+			}
 		}
+
 	}
 	public void clearCombatLog() {
 		player0Damage.setText("");
@@ -529,7 +545,7 @@ public class Window extends JFrame {
 	}
 	private class combatListenerRun implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Run");
+			Main.getParty().partyRun();
 		}
 	}
 }

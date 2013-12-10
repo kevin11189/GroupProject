@@ -71,12 +71,18 @@ public class Monster {
 	}
 
 	private void demon() {
-		monsterName = "demon";
+		/*monsterName = "demon";
 		monsterHealthPoints = random.nextInt(6) + 4;
 		monsterMaxHealthPoints = monsterHealthPoints;
 		monsterStrength = random.nextInt(5) + 7;
 		monsterIntelligence = random.nextInt(4) + 4;
-		monsterAgility = random.nextInt(4) + 1;
+		monsterAgility = random.nextInt(4) + 1;*/
+		monsterName = "demon demo";
+		monsterHealthPoints = random.nextInt(100) + 4;
+		monsterMaxHealthPoints = monsterHealthPoints;
+		monsterStrength = random.nextInt(5) + 7;
+		monsterIntelligence = random.nextInt(4) + 4;
+		monsterAgility = random.nextInt(14) + 1;
 	}
 
 	public String getMonsterName() {
@@ -115,16 +121,27 @@ public class Monster {
 	public int getMonsterMaxHealthPoints() {
 		return monsterMaxHealthPoints;
 	}
-	public void monsterFight(Hero h) {
-		if (h.isHeroAlive()) {
-			if ( (random.nextInt(19) + 1) <= monsterAgility) {
-				monsterHit = true;
-				h.addHealth(- ((int)Math.ceil((double)monsterStrength/3.0) + h.getHeroArmor()));
-				System.out.println(h.getHeroHealth());
+	public void monsterFight(Party p) {
+		boolean attacking = true;
+		int targetPlayer;
+		while (attacking) {
+			targetPlayer = random.nextInt(2);
+			monsterAttacked = true;
+			if (p.getHero(targetPlayer).isHeroAlive()) {
+				if ( (random.nextInt(19) + 1) <= monsterAgility) {
+					monsterHit = true;
+					this.setMonsterTarget(Main.getParty().getHero(targetPlayer).getHeroName());
+					p.getHero(targetPlayer).addHealth(- ((int)Math.ceil((double)monsterStrength/3.0) + p.getHero(targetPlayer).getHeroArmor()));
+					System.out.println(p.getHero(targetPlayer));
+				} else {
+					monsterHit = false;
+				}
+				attacking = false;
 			} else {
-				monsterHit = false;
+				attacking = true;
 			}
 		}
+
 	}
 
 	public String getMonsterTarget() {

@@ -4,6 +4,7 @@ public class Party {
 
 	private Hero[] party;
 	private int x, y;
+	private boolean running;
 	public Party(int players) {
 		party = new Hero[players];
 		x = 1;
@@ -30,6 +31,7 @@ public class Party {
 	}
 
 	public void partyFight( Monster m) {
+		running = false;
 		if (m.isMonsterAlive() && ( getHero(0).isHeroAlive() || getHero(1).isHeroAlive() || getHero(2).isHeroAlive() ) ) {
 			if (getHero(0).isHeroAlive() && m.isMonsterAlive()) {
 				getHero(0).heroFight(m);
@@ -48,15 +50,9 @@ public class Party {
 			}
 			if (m.isMonsterAlive()) {
 				m.setMonsterAttacked(true);
-				if (getHero(0).isHeroAlive()) {
-					m.setMonsterTarget(getHero(0).getHeroName());
-					m.monsterFight(getHero(0));
-				} else if (getHero(1).isHeroAlive()) {
-					m.setMonsterTarget(getHero(1).getHeroName());
-					m.monsterFight(getHero(1));
-				} else if (getHero(2).isHeroAlive()) {
-					m.setMonsterTarget(getHero(2).getHeroName());
-					m.monsterFight(getHero(2));
+				if (getHero(0).isHeroAlive() || getHero(1).isHeroAlive() || getHero(2).isHeroAlive()) {
+
+					m.monsterFight(Main.getParty());
 				}
 			} else {
 				m.setMonsterAttacked(false);
@@ -74,6 +70,18 @@ public class Party {
 		Main.getWindow().updateCombatLog();
 	}
 
+	public void partyRun() {
+		running = true;
+		System.out.println("RUN!");
+		Main.getMonster().monsterFight(Main.getParty());
+		Main.getWindow().updateCombatLog();
+		Main.getWindow().startMove();
+		Main.getWindow().stopCombatButtons();
+	}
+
+	public boolean isRunning() {
+		return running;
+	}
 	public Hero getHero(int i) {
 		return party[i];
 	}
