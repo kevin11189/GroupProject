@@ -151,7 +151,6 @@ public class Monster {
 				attacking = true;
 			}
 		}
-
 	}
 
 	public String getMonsterTarget() {

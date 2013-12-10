@@ -48,9 +48,9 @@ public class Party {
 		}
 		if (!m.isMonsterAlive()) {
 			dropGold();
-			Main.getWindow().updateLoot();
 			Main.getWindow().startMove();
 			Main.getWindow().startEquip();
+			Main.getWindow().startOptions();
 			Main.getWindow().stopCombatButtons();
 		}
 		if (!getHero(0).isHeroAlive() && !getHero(1).isHeroAlive() && !getHero(2).isHeroAlive()) {
@@ -59,6 +59,7 @@ public class Party {
 			JOptionPane.showMessageDialog(null, "You have travelled " + roomsTraveled + " rooms." + Main.getParty().getHero(0).getHeroName() + " has found " + Main.getParty().getHero(0).getHeroGold() + "." + Main.getParty().getHero(1).getHeroName() + " has found " + Main.getParty().getHero(1).getHeroGold() + "." + Main.getParty().getHero(2).getHeroName() + " has found " + Main.getParty().getHero(2).getHeroGold() + ".");
 		}
 		Main.getWindow().updateCombatLog();
+		Main.getWindow().updateLoot();
 	}
 
 	public void partyRun() {
@@ -96,6 +97,7 @@ public class Party {
 			Main.getWindow().stopMove();
 			Main.getWindow().startCombatButtons();
 			Main.getWindow().stopEquip();
+			Main.getWindow().stopOptions();
 			Main.getWindow().changeStats(this);
 		}
 	}
@@ -112,6 +114,7 @@ public class Party {
 			Main.getWindow().stopMove();
 			Main.getWindow().startCombatButtons();
 			Main.getWindow().stopEquip();
+			Main.getWindow().stopOptions();
 			Main.getWindow().changeStats(this);
 		}
 	}

@@ -12,9 +12,11 @@ public class Window extends JFrame {
 	private JLabel monsterName, monsterHealth, monsterStrength, monsterIntelligence, monsterAgility;
 	private JLabel player0Damage, player1Damage, player2Damage, monsterDamage;
 	private JLabel goldLoot, equipmentLoot;
-	private JButton buttonUp, buttonDown, buttonRight, buttonLeft, buttonFight, buttonRun, equipOne, equipTwo, equipThree, equipNone;
+	private JButton buttonUp, buttonDown, buttonRight, buttonLeft, buttonFight, buttonRun, equipOne, equipTwo, equipThree, equipNone, saveButton, restButton;
 	public Window(Party p) {
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//My IDE was yelling at me. It still ran, but for some reason it wants WindowConstants instead of JFrame
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		addComponentsToPane(frame.getContentPane(), p);
 		frame.pack();
 		frame.setResizable(false);
@@ -326,7 +328,16 @@ public class Window extends JFrame {
 		equipButtonPanel.add(equipNone);
 		panel4.add(equipButtonPanel);
 
-
+		JPanel optionPanel = new JPanel(new GridLayout(0, 2));
+		optionPanel.setBounds(10, 240, 370, 20);
+		setBackground(Color.BLACK);
+		saveButton = new JButton("SAVE!");
+		restButton = new JButton("REST!");
+		saveButton.addActionListener(new saveListener());
+		restButton.addActionListener(new restListener());
+		optionPanel.add(saveButton);
+		optionPanel.add(restButton);
+		panel4.add(optionPanel);
 
 		miniMap = new JPanel[5][3];
 		for (int row = 0; row < miniMap.length; row++) {
@@ -577,7 +588,14 @@ public class Window extends JFrame {
 		equipThree.setEnabled(false);
 		equipNone.setEnabled(false);
 	}
-
+	public void startOptions() {
+		saveButton.setEnabled(true);
+		restButton.setEnabled(true);
+	}
+	public void stopOptions() {
+		saveButton.setEnabled(false);
+		restButton.setEnabled(false);
+	}
 
 	private class directionListenerUp implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -639,6 +657,16 @@ public class Window extends JFrame {
 	private class equipListenerNone implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			stopEquip();
+		}
+	}
+	private class saveListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			System.out.print("SAVE!");
+		}
+	}
+	private class restListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			System.out.print("REST!");
 		}
 	}
 }

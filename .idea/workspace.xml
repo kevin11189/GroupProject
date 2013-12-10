@@ -4,15 +4,16 @@
     <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Monster.java" afterPath="$PROJECT_DIR$/src/Monster.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Party.java" afterPath="$PROJECT_DIR$/src/Party.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window.java" afterPath="$PROJECT_DIR$/src/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GroupProject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386684747360" ignored="false" />
-    <file path="/Window.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386662535958" ignored="false" />
-    <file path="/Party.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386685275841" ignored="false" />
-    <file path="/Monster.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386659603759" ignored="false" />
-    <file path="/Hero.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386684586767" ignored="false" />
+    <file path="/Dummy.txt" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386685904307" ignored="false" />
+    <file path="/Window.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386702860298" ignored="false" />
+    <file path="/Party.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703178303" ignored="false" />
+    <file path="/Monster.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386687540138" ignored="false" />
+    <file path="/Hero.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703117443" ignored="false" />
     <file path="/.gitignore" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386684711438" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Window.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="5" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0">
+            <state line="593" column="5" selection-start="26055" selection-end="26055" vertical-scroll-proportion="-2.0731707">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,16 +98,16 @@
       <file leaf-file-name="Hero.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="33" selection-start="3477" selection-end="3477" vertical-scroll-proportion="0.0">
+            <state line="116" column="29" selection-start="2926" selection-end="2930" vertical-scroll-proportion="-5.88">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Party.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Party.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Party.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="36" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.822695">
+            <state line="52" column="44" selection-start="1479" selection-end="1479" vertical-scroll-proportion="-7.8">
               <folding />
             </state>
           </provider>
@@ -115,7 +116,7 @@
       <file leaf-file-name="Monster.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="40" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
+            <state line="151" column="13" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,10 +140,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Window.java" />
-        <option value="$PROJECT_DIR$/src/Hero.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Monster.java" />
+        <option value="$PROJECT_DIR$/src/Window.java" />
+        <option value="$PROJECT_DIR$/src/Hero.java" />
         <option value="$PROJECT_DIR$/src/Party.java" />
       </list>
     </option>
@@ -404,7 +405,11 @@
       <created>1386684750377</created>
       <updated>1386684750377</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dead people can no longer pickup gold.">
+      <created>1386685906580</created>
+      <updated>1386685906580</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -480,7 +485,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added potions&#10;Fixed demon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dead people can no longer pickup gold." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -497,6 +502,7 @@
     <MESSAGE value="Reworked File Structure. Not sure how it happend but everything was a folder deep and it was annoying to switch between Mac and Windows. Hopefully, this resolves it." />
     <MESSAGE value="Added Equiping and Gold dropping" />
     <MESSAGE value="Added potions&#10;Fixed demon" />
+    <MESSAGE value="Dead people can no longer pickup gold." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -555,16 +561,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hero.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="33" selection-start="3477" selection-end="3477" vertical-scroll-proportion="0.0">
+        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
+        <state line="151" column="13" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -576,26 +582,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Party.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="44" selection-start="1479" selection-end="1479" vertical-scroll-proportion="-7.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="29" selection-start="2926" selection-end="2930" vertical-scroll-proportion="-5.88">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="5" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0">
+        <state line="593" column="5" selection-start="26055" selection-end="26055" vertical-scroll-proportion="-2.0731707">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Monster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="40" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Party.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="36" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.822695">
-          <folding />
         </state>
       </provider>
     </entry>
