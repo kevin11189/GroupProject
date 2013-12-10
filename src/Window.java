@@ -5,14 +5,15 @@ import javax.swing.*;
 
 public class Window extends JFrame {
 	public JFrame frame = new JFrame("RPG Project");
-	private JPanel panel1, panel2, panel3, panel4, panel5, combatTextPanel, combatButtonPanel, directionPanel;
+	private JPanel panel1, panel2, panel3, panel4, panel5, combatTextPanel, combatButtonPanel, directionPanel, lootPanel, equipButtonPanel;
 	private static JPanel[][] miniMap;
 	private JLabel player0Name, player0Health, player0Strength, player0Intelligence, player0Agility, player0Armor, player0Weapon, player0Gold;
 	private JLabel player1Name, player1Health, player1Strength, player1Intelligence, player1Agility, player1Armor, player1Weapon, player1Gold;
 	private JLabel player2Name, player2Health, player2Strength, player2Intelligence, player2Agility, player2Armor, player2Weapon, player2Gold;
 	private JLabel monsterName, monsterHealth, monsterStrength, monsterIntelligence, monsterAgility;
 	private JLabel player0Damage, player1Damage, player2Damage, monsterDamage;
-	private JButton buttonUp, buttonDown, buttonRight, buttonLeft, buttonFight, buttonRun;
+	private JLabel goldLoot, equipmentLoot;
+	private JButton buttonUp, buttonDown, buttonRight, buttonLeft, buttonFight, buttonRun, equipOne, equipTwo, equipThree, equipNone;
 	public Window(Party p) {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		addComponentsToPane(frame.getContentPane(), p);
@@ -296,6 +297,38 @@ public class Window extends JFrame {
 		buttonRun.addActionListener(new combatListenerRun());
 		combatButtonPanel.add(buttonRun);
 		panel4.add(combatButtonPanel);
+
+		lootPanel = new JPanel(new GridLayout(0,1));
+		lootPanel.setBounds(10, 130, 300, 40);
+		lootPanel.setBackground(Color.BLACK);
+		goldLoot = new JLabel("GOLD LOOT");
+		goldLoot.setForeground(Color.WHITE);
+		equipmentLoot = new JLabel("EQUIPMENT LOOT");
+		equipmentLoot.setForeground(Color.WHITE);
+		lootPanel.add(goldLoot);
+		lootPanel.add(equipmentLoot);
+		panel4.add(lootPanel);
+
+		equipButtonPanel = new JPanel(new GridLayout(0,2));
+		equipButtonPanel.setBounds(10, 180, 370, 40);
+		equipButtonPanel.setBackground(Color.BLACK);
+		//equipOne, equipTwo, equipThree, equipNone
+		equipOne = new JButton("Equip " + Main.getParty().getHero(0).getHeroName());
+		equipTwo = new JButton("Equip " + Main.getParty().getHero(1).getHeroName());
+		equipThree = new JButton("Equip " + Main.getParty().getHero(2).getHeroName());
+		equipNone = new JButton("Equip no one");
+		equipOne.addActionListener(new equipListenerOne());
+		equipTwo.addActionListener(new equipListenerTwo());
+		equipThree.addActionListener(new equipListenerThree());
+		equipNone.addActionListener(new equipListenerNone());
+		equipButtonPanel.add(equipOne);
+		equipButtonPanel.add(equipTwo);
+		equipButtonPanel.add(equipThree);
+		equipButtonPanel.add(equipNone);
+		panel4.add(equipButtonPanel);
+
+
+
 		miniMap = new JPanel[5][3];
 		for (int row = 0; row < miniMap.length; row++) {
 			for (int col = 0; col < miniMap[row].length; col++) {
@@ -428,6 +461,29 @@ public class Window extends JFrame {
 			}
 		}
 	}
+	public void updateLoot() {
+		if (!Main.getMonster().isMonsterAlive()) {
+			if (Main.getMonster().getMonsterEquipment() > 0) {
+				equipmentLoot.setText(Main.getMonster().getMonsterName() + " drops " + Hero.getEquipmentType(Main.getMonster()));
+				equipmentLoot.setForeground(Color.GREEN);
+			} else {
+				equipmentLoot.setText(Main.getMonster().getMonsterName() + " drops " + Hero.getEquipmentType(Main.getMonster()));
+				equipmentLoot.setForeground(Color.RED);
+				stopEquip();
+			}
+			if (Main.getParty().isSuccessfulGoldPickup()) {
+				goldLoot.setText(Main.getParty().getHero(Main.getParty().getRandomPlayer()).getHeroName() + " gets " + Main.getMonster().getMonsterGold() + " gold.");
+				goldLoot.setForeground(Color.GREEN);
+			} else {
+				goldLoot.setText(Main.getParty().getHero(Main.getParty().getRandomPlayer()).getHeroName() + " FAILED to get " + Main.getMonster().getMonsterGold() + " gold.");
+				goldLoot.setForeground(Color.RED);
+			}
+		} else {
+			goldLoot.setText("");
+			equipmentLoot.setText("");
+		}
+
+	}
 	public void updateCombatLog() {
 		//combat
 		if (Main.getParty().isRunning()) {
@@ -510,11 +566,26 @@ public class Window extends JFrame {
 		buttonFight.setEnabled(true);
 		buttonRun.setEnabled(true);
 	}
+	public void startEquip() {
+		equipOne.setEnabled(true);
+		equipTwo.setEnabled(true);
+		equipThree.setEnabled(true);
+		equipNone.setEnabled(true);
+	}
+	public void stopEquip() {
+		equipOne.setEnabled(false);
+		equipTwo.setEnabled(false);
+		equipThree.setEnabled(false);
+		equipNone.setEnabled(false);
+	}
+
+
 	private class directionListenerUp implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Main.getParty().addY(-1);
 			updateMiniMap();
 			clearCombatLog();
+			updateLoot();
 		}
 	}
 	private class directionListenerDown implements ActionListener {
@@ -522,6 +593,7 @@ public class Window extends JFrame {
 			Main.getParty().addY(1);
 			updateMiniMap();
 			clearCombatLog();
+			updateLoot();
 		}
 	}
 	private class directionListenerLeft implements ActionListener {
@@ -529,6 +601,7 @@ public class Window extends JFrame {
 			Main.getParty().addX(-1);
 			updateMiniMap();
 			clearCombatLog();
+			updateLoot();
 		}
 	}
 	private class directionListenerRight implements ActionListener {
@@ -536,6 +609,7 @@ public class Window extends JFrame {
 			Main.getParty().addX(1);
 			updateMiniMap();
 			clearCombatLog();
+			updateLoot();
 		}
 	}
 	private class combatListenerFight implements ActionListener {
@@ -546,6 +620,26 @@ public class Window extends JFrame {
 	private class combatListenerRun implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Main.getParty().partyRun();
+		}
+	}
+	private class equipListenerOne implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			Hero.pickupEquipment(Main.getParty().getHero(0), Main.getMonster().getMonsterEquipment());
+		}
+	}
+	private class equipListenerTwo implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			Hero.pickupEquipment(Main.getParty().getHero(1), Main.getMonster().getMonsterEquipment());
+		}
+	}
+	private class equipListenerThree implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			Hero.pickupEquipment(Main.getParty().getHero(2), Main.getMonster().getMonsterEquipment());
+		}
+	}
+	private class equipListenerNone implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			stopEquip();
 		}
 	}
 }

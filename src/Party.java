@@ -1,10 +1,12 @@
 import javax.swing.*;
+import java.util.Random;
 
 public class Party {
 
 	private Hero[] party;
-	private int x, y;
-	private boolean running;
+	private int x, y, randomPlayer;
+	private boolean running, successfulGoldPickup;
+	private Random random = new Random();
 	public Party(int players) {
 		party = new Hero[players];
 		x = 1;
@@ -59,10 +61,13 @@ public class Party {
 			}
 		}
 		if (!m.isMonsterAlive()) {
+			dropGold();
+			Main.getWindow().updateLoot();
 			Main.getWindow().startMove();
+			Main.getWindow().startEquip();
 			Main.getWindow().stopCombatButtons();
 		}
-		if (!(getHero(0).isHeroAlive() && getHero(1).isHeroAlive() && getHero(2).isHeroAlive())) {
+		if (!getHero(0).isHeroAlive() && !getHero(1).isHeroAlive() && !getHero(2).isHeroAlive()) {
 			Main.getWindow().stopMove();
 			Main.getWindow().stopCombatButtons();
 			JOptionPane.showMessageDialog(null, "YOU LOSE BITCH");
@@ -104,6 +109,7 @@ public class Party {
 			Main.newMonster();
 			Main.getWindow().stopMove();
 			Main.getWindow().startCombatButtons();
+			Main.getWindow().stopEquip();
 			Main.getWindow().changeStats(this);
 		}
 	}
@@ -118,8 +124,27 @@ public class Party {
 			Main.newMonster();
 			Main.getWindow().stopMove();
 			Main.getWindow().startCombatButtons();
+			Main.getWindow().stopEquip();
 			Main.getWindow().changeStats(this);
 		}
 	}
 
+	public void dropGold() {
+		randomPlayer = random.nextInt(3);
+		if (Main.getParty().getHero(randomPlayer).getHeroIntelligence() >= random.nextInt(20)) {
+			successfulGoldPickup = true;
+			Main.getParty().getHero(randomPlayer).addHeroGold(Main.getMonster().getMonsterGold());
+		} else {
+			successfulGoldPickup = false;
+		}
+
+	}
+
+	public int getRandomPlayer() {
+		return randomPlayer;
+	}
+
+	public boolean isSuccessfulGoldPickup() {
+		return successfulGoldPickup;
+	}
 }

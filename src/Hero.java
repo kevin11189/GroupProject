@@ -2,7 +2,7 @@ import java.util.Random;
 
 
 public class Hero {
-	private int heroHealth, heroStrength, heroIntelligence, heroAgility, heroArmor, heroWeapon, heroGold, heroDamage;
+	private int heroHealth, heroStrength, heroIntelligence, heroAgility, heroArmor, heroWeapon, heroGold, heroDamage, itemId;
 	private String heroName;
 	private boolean heroAlive, heroHit, heroAttacked;
 	Random random = new Random();
@@ -64,6 +64,40 @@ public class Hero {
 		} else {
 			return "armor error";
 		}
+	}
+	public static String getEquipmentType(Monster m) {
+		if (m.getMonsterEquipment() == 1) {
+			return "knife (+1 attack)";
+		} else if (m.getMonsterEquipment() == 2) {
+			return "jacket (+1 defense)";
+		} else if (m.getMonsterEquipment() == 3) {
+			return "sword (+2 attack)";
+		} else if (m.getMonsterEquipment() == 4) {
+			return "shield (+2 defense)";
+		} else if (m.getMonsterEquipment() == 5) {
+			return "shotgun (+3 attack)";
+		} else if (m.getMonsterEquipment() == 6) {
+			return "suit o' armor (+3 defense)";
+		} else {
+			return "nothing.";
+		}
+	}
+	public static void pickupEquipment(Hero h, int i) {
+		if ( i == 1 ) {
+			h.equipWeapon(1);
+		} else if ( i == 2 ) {
+			h.equipArmor(1);
+		} else if ( i == 3 ) {
+			h.equipWeapon(2);
+		} else if ( i == 4 ) {
+			h.equipArmor(2);
+		} else if ( i == 5 ) {
+			h.equipWeapon(3);
+		} else if ( i == 6 ) {
+			h.equipArmor(3);
+		}
+		Main.getWindow().stopEquip();
+		Main.getWindow().changeStats(Main.getParty());
 	}
 
 	//Agility Methods

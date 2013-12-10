@@ -1,7 +1,7 @@
 import java.util.Random;
 public class Monster {
 	private Random random = new Random();
-	private int monsterStrength, monsterIntelligence, monsterAgility, monsterHealthPoints, monsterMaxHealthPoints;
+	private int monsterStrength, monsterIntelligence, monsterAgility, monsterHealthPoints, monsterMaxHealthPoints, monsterGold, monsterEquipment;
 	private String monsterName, monsterTarget;
 	private boolean monsterAttacked, monsterHit;
 	private boolean monsterAlive = true;
@@ -41,6 +41,8 @@ public class Monster {
 		monsterStrength = random.nextInt(2) + 1;
 		monsterIntelligence = random.nextInt(1) + 1;
 		monsterAgility = random.nextInt(1) + 1;
+		monsterGold = random.nextInt(20) + 10;
+		monsterEquipment = random.nextInt(7);
 	}
 
 	private void orc()  {
@@ -50,6 +52,8 @@ public class Monster {
 		monsterStrength = random.nextInt(3) + 2;
 		monsterIntelligence = random.nextInt(3) + 2;
 		monsterAgility = random.nextInt(3) + 2;
+		monsterGold = random.nextInt(20) + 10;
+		monsterEquipment = random.nextInt(7);
 	}
 
 	private void skeleton() {
@@ -59,6 +63,8 @@ public class Monster {
 		monsterStrength = random.nextInt(4) + 3;
 		monsterIntelligence = random.nextInt(4) + 3;
 		monsterAgility = random.nextInt(4) + 3;
+		monsterGold = random.nextInt(20) + 10;
+		monsterEquipment = random.nextInt(7);
 	}
 
 	private void zombie() {
@@ -68,6 +74,8 @@ public class Monster {
 		monsterStrength = random.nextInt(3) + 5;
 		monsterIntelligence = random.nextInt(3) + 1;
 		monsterAgility = random.nextInt(3) + 2;
+		monsterGold = random.nextInt(20) + 10;
+		monsterEquipment = random.nextInt(7);
 	}
 
 	private void demon() {
@@ -83,6 +91,9 @@ public class Monster {
 		monsterStrength = random.nextInt(5) + 7;
 		monsterIntelligence = random.nextInt(4) + 4;
 		monsterAgility = random.nextInt(14) + 1;
+
+		monsterGold = random.nextInt(20) + 10;
+		monsterEquipment = random.nextInt(7);
 	}
 
 	public String getMonsterName() {
@@ -125,7 +136,7 @@ public class Monster {
 		boolean attacking = true;
 		int targetPlayer;
 		while (attacking) {
-			targetPlayer = random.nextInt(2);
+			targetPlayer = random.nextInt(3);
 			monsterAttacked = true;
 			if (p.getHero(targetPlayer).isHeroAlive()) {
 				if ( (random.nextInt(19) + 1) <= monsterAgility) {
@@ -162,5 +173,13 @@ public class Monster {
 
 	public void setMonsterAttacked(boolean monsterAttacked) {
 		this.monsterAttacked = monsterAttacked;
+	}
+
+	public int getMonsterGold() {
+		return monsterGold;
+	}
+
+	public int getMonsterEquipment() {
+		return monsterEquipment;
 	}
 }
