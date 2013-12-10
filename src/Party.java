@@ -142,4 +142,17 @@ public class Party {
 	public boolean isSuccessfulGoldPickup() {
 		return successfulGoldPickup;
 	}
+	public void partyRest() {
+		for ( int i = 0; i < party.length; i++) {
+			party[i].addHealth(1);
+		}
+		if (random.nextInt(6) == 0) {
+			Main.newMonster();
+			Main.getWindow().stopMove();
+			Main.getWindow().startCombatButtons();
+			Main.getWindow().stopEquip();
+			Main.getWindow().stopOptions();
+			Main.getWindow().changeStats(this);
+		}
+	}
 }

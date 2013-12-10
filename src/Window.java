@@ -666,7 +666,7 @@ public class Window extends JFrame {
 	}
 	private class restListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.out.print("REST!");
+			Main.getParty().partyRest();
 		}
 	}
 }
