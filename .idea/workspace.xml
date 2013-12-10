@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="">
+    <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InputOutput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hero.java" afterPath="$PROJECT_DIR$/src/Hero.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TitleScreen.java" afterPath="$PROJECT_DIR$/src/TitleScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window.java" afterPath="$PROJECT_DIR$/src/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GroupProject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386704052816" ignored="false" />
-    <file path="/Window.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386704370913" ignored="false" />
+    <file path="/Dummy.txt" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386706322873" ignored="false" />
+    <file path="/Window.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386706651204" ignored="false" />
     <file path="/Party.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703850567" ignored="false" />
     <file path="/Monster.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386687540138" ignored="false" />
-    <file path="/Hero.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386703117443" ignored="false" />
+    <file path="/Hero.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386710116604" ignored="false" />
     <file path="/.gitignore" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386684711438" ignored="false" />
+    <file path="/Save.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386706306512" ignored="false" />
+    <file path="/InputOutput.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386710714056" ignored="false" />
+    <file path="/TitleScreen.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386710590565" ignored="false" />
+    <file path="/a.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386706816832" ignored="false" />
+    <file path="/sample.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386706817496" ignored="false" />
+    <file path="/a.html" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386706819712" ignored="false" />
+    <file path="/Main.java" changelist="b450f1c3-8114-416a-a68c-364700b6d457" time="1386710620467" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +87,16 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
+            <state line="19" column="5" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Window.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="369" column="43" selection-start="15490" selection-end="15490" vertical-scroll-proportion="0.8902439">
+            <state line="27" column="5" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,11 +104,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TitleScreen.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="30" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Hero.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="29" selection-start="2926" selection-end="2930" vertical-scroll-proportion="34.48">
+            <state line="162" column="33" selection-start="3917" selection-end="3917" vertical-scroll-proportion="-11.12">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputOutput.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/InputOutput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="50" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.7804878">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,7 +136,7 @@
       <file leaf-file-name="Party.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Party.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="9" selection-start="4257" selection-end="4257" vertical-scroll-proportion="-27.32">
+            <state line="18" column="5" selection-start="485" selection-end="485" vertical-scroll-proportion="-9.6">
               <folding />
             </state>
           </provider>
@@ -114,7 +145,7 @@
       <file leaf-file-name="Monster.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="13" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.0">
+            <state line="36" column="0" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,9 +171,13 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Monster.java" />
-        <option value="$PROJECT_DIR$/src/Hero.java" />
         <option value="$PROJECT_DIR$/src/Party.java" />
+        <option value="$PROJECT_DIR$/src/Save.java" />
         <option value="$PROJECT_DIR$/src/Window.java" />
+        <option value="$PROJECT_DIR$/src/Hero.java" />
+        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/InputOutput.java" />
       </list>
     </option>
   </component>
@@ -223,7 +258,7 @@
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -415,7 +450,11 @@
       <created>1386704060966</created>
       <updated>1386704060966</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around.">
+      <created>1386704692071</created>
+      <updated>1386704692071</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -433,7 +472,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -491,7 +530,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult." />
+    <option name="LAST_COMMIT_MESSAGE" value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -511,6 +550,7 @@
     <MESSAGE value="Dead people can no longer pickup gold." />
     <MESSAGE value="Added buttons for saving and resting. They are having odd behaviors in respect to how they are disabling upon combat sequence. Going to check the behavior on my PC later to see if it's a mac thing. AWT on mac has been an unpleasant experience." />
     <MESSAGE value="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult." />
+    <MESSAGE value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -520,13 +560,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Window.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="5" selection-start="1287" selection-end="1287" vertical-scroll-proportion="0.0">
@@ -576,37 +609,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/src.zip!/java/awt/event/ActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
+        <state line="48" column="7" selection-start="958" selection-end="958" vertical-scroll-proportion="0.6453901">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="13" selection-start="4160" selection-end="4160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Party.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="9" selection-start="4257" selection-end="4257" vertical-scroll-proportion="-27.32">
+        <state line="36" column="0" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="29" selection-start="2926" selection-end="2930" vertical-scroll-proportion="34.48">
+        <state line="162" column="33" selection-start="3917" selection-end="3917" vertical-scroll-proportion="-11.12">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.24113475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Party.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="5" selection-start="485" selection-end="485" vertical-scroll-proportion="-9.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="30" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="369" column="43" selection-start="15490" selection-end="15490" vertical-scroll-proportion="0.8902439">
+        <state line="27" column="5" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="5" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="50" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.7804878">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

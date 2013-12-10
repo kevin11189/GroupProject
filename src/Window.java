@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.*;
 
 public class Window extends JFrame {
@@ -666,7 +667,11 @@ public class Window extends JFrame {
 	}
 	private class saveListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.out.print("SAVE!");
+			try {
+				InputOutput.save();
+			} catch (IOException e1) {
+				e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+			}
 		}
 	}
 	private class restListener implements ActionListener {

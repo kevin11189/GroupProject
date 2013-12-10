@@ -144,6 +144,9 @@ public class Hero {
 		}
 		Main.getWindow().changeStats(Main.getParty());
 	}
+	public void setHeroHealth(int heroHealth) {
+		this.heroHealth = heroHealth;
+	}
 	public int getHeroHealth() {
 		return heroHealth;
 	}
@@ -155,6 +158,9 @@ public class Hero {
 	public void addHeroGold(int gold) {
 		this.heroGold += gold;
 		Main.getWindow().changeStats(Main.getParty());
+	}
+	public void setHeroGold(int heroGold) {
+		this.heroGold = heroGold;
 	}
 
 	//Alive Methods

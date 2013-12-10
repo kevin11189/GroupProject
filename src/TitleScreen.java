@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class TitleScreen extends JFrame {
 
@@ -39,6 +40,7 @@ public class TitleScreen extends JFrame {
 		JButton buttonNew = new JButton("New Game");
 		buttonNew.addActionListener(new newGameListener());
 		JButton buttonLoad = new JButton("Load");
+		buttonLoad.addActionListener(new loadGameListener());
 		pane.add(titlePanel);
 		pane.add(buttonNew);
 		pane.add(buttonLoad);
@@ -51,8 +53,18 @@ public class TitleScreen extends JFrame {
 
 	private class newGameListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			Main.newGame();
+			Main.newGame(false);
 			frame.setVisible(false);
+		}
+	}
+	private class loadGameListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			try {
+				InputOutput.load();
+				Main.newGame(true);
+			} catch (IOException e1) {
+				e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+			}
 		}
 	}
 }
