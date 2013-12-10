@@ -2,7 +2,13 @@ import java.util.Random;
 
 
 public class Hero {
-	private int heroHealth, heroStrength, heroIntelligence, heroAgility, heroArmor, heroWeapon, heroGold, heroDamage, itemId;
+	private int heroHealth;
+    private int heroStrength;
+    private int heroIntelligence;
+    private int heroAgility;
+    private int heroArmor;
+    private int heroWeapon;
+    private int heroGold;
 	private String heroName;
 	private boolean heroAlive, heroHit, heroAttacked;
 	Random random = new Random();
@@ -164,7 +170,6 @@ public class Hero {
 		if (m.isMonsterAlive()) {
 			if ( (random.nextInt(19) + 1) <= heroAgility) {
 				m.addMonsterHealthPoints(- ((int)Math.ceil((double)heroStrength/3.0) + heroWeapon));
-				heroDamage = ((int)Math.ceil((double)heroStrength/3.0) + heroWeapon); //round weapon damage correctly
 				setHeroHit(true);
 			} else {
 				setHeroHit(false);
