@@ -84,6 +84,12 @@ public class Hero {
 			return "shotgun (+3 attack)";
 		} else if (m.getMonsterEquipment() == 6) {
 			return "suit o' armor (+3 defense)";
+		} else if (m.getMonsterEquipment() == 7) {
+			return "small potion (+1 health)";
+		} else if (m.getMonsterEquipment() == 8) {
+			return "medium potion (+2 health)";
+		} else if (m.getMonsterEquipment() == 9) {
+			return "large potion (+3 health)";
 		} else {
 			return "nothing.";
 		}
@@ -101,6 +107,12 @@ public class Hero {
 			h.equipWeapon(3);
 		} else if ( i == 6 ) {
 			h.equipArmor(3);
+		} else if ( i == 7 ) {
+			h.addHealth(1);
+		} else if ( i == 8 ) {
+			h.addHealth(2);
+		} else if ( i == 9 ) {
+			h.addHealth(3);
 		}
 		Main.getWindow().stopEquip();
 		Main.getWindow().changeStats(Main.getParty());
@@ -127,6 +139,8 @@ public class Hero {
 		if (this.heroHealth <= 0) {
 			this.heroHealth = 0;
 			this.heroAlive = false;
+		} else if (this.heroHealth >= 20) {
+			this.heroHealth = 20;
 		}
 		Main.getWindow().changeStats(Main.getParty());
 	}

@@ -41,7 +41,7 @@ public class Monster {
 		monsterIntelligence = random.nextInt(1) + 1;
 		monsterAgility = random.nextInt(1) + 1;
 		monsterGold = random.nextInt(20) + 10;
-		monsterEquipment = random.nextInt(7);
+		monsterEquipment = random.nextInt(10);
 	}
 
 	private void orc()  {
@@ -52,7 +52,7 @@ public class Monster {
 		monsterIntelligence = random.nextInt(3) + 2;
 		monsterAgility = random.nextInt(3) + 2;
 		monsterGold = random.nextInt(20) + 10;
-		monsterEquipment = random.nextInt(7);
+		monsterEquipment = random.nextInt(10);
 	}
 
 	private void skeleton() {
@@ -63,7 +63,7 @@ public class Monster {
 		monsterIntelligence = random.nextInt(4) + 3;
 		monsterAgility = random.nextInt(4) + 3;
 		monsterGold = random.nextInt(20) + 10;
-		monsterEquipment = random.nextInt(7);
+		monsterEquipment = random.nextInt(10);
 	}
 
 	private void zombie() {
@@ -74,25 +74,18 @@ public class Monster {
 		monsterIntelligence = random.nextInt(3) + 1;
 		monsterAgility = random.nextInt(3) + 2;
 		monsterGold = random.nextInt(20) + 10;
-		monsterEquipment = random.nextInt(7);
+		monsterEquipment = random.nextInt(10);
 	}
 
 	private void demon() {
-		/*monsterName = "demon";
+		monsterName = "demon";
 		monsterHealthPoints = random.nextInt(6) + 4;
 		monsterMaxHealthPoints = monsterHealthPoints;
 		monsterStrength = random.nextInt(5) + 7;
 		monsterIntelligence = random.nextInt(4) + 4;
-		monsterAgility = random.nextInt(4) + 1;*/
-		monsterName = "demon demo";
-		monsterHealthPoints = random.nextInt(100) + 4;
-		monsterMaxHealthPoints = monsterHealthPoints;
-		monsterStrength = random.nextInt(5) + 7;
-		monsterIntelligence = random.nextInt(4) + 4;
-		monsterAgility = random.nextInt(14) + 1;
-
+		monsterAgility = random.nextInt(4) + 1;
 		monsterGold = random.nextInt(20) + 10;
-		monsterEquipment = random.nextInt(7);
+		monsterEquipment = random.nextInt(10);
 	}
 
 	public String getMonsterName() {
