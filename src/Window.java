@@ -22,6 +22,7 @@ public class Window extends JFrame {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		stopCombatButtons();
+		stopEquip();
 	}
 	public void addComponentsToPane(Container pane, Party p) {
 		JPanel panelIn;
@@ -301,9 +302,9 @@ public class Window extends JFrame {
 		lootPanel = new JPanel(new GridLayout(0,1));
 		lootPanel.setBounds(10, 130, 300, 40);
 		lootPanel.setBackground(Color.BLACK);
-		goldLoot = new JLabel("GOLD LOOT");
+		goldLoot = new JLabel("");
 		goldLoot.setForeground(Color.WHITE);
-		equipmentLoot = new JLabel("EQUIPMENT LOOT");
+		equipmentLoot = new JLabel("");
 		equipmentLoot.setForeground(Color.WHITE);
 		lootPanel.add(goldLoot);
 		lootPanel.add(equipmentLoot);
