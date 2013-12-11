@@ -5,7 +5,8 @@ public class Party {
 
 	private Hero[] party;
 	private int x, y, randomPlayer, roomsTraveled;
-	private boolean running, successfulGoldPickup, findingGold;
+	private boolean running;
+	private boolean successfulGoldPickup;
 	private Random random = new Random();
 	public Party(int players, boolean load) {
 		party = new Hero[players];
@@ -13,17 +14,14 @@ public class Party {
 		y = 1;
 		roomsTraveled = 0;
 		if (!load) {
-			for(int i = 0; i < party.length; i++)
-			{
+			for(int i = 0; i < party.length; i++) {
 				party[i] = new Hero(JOptionPane.showInputDialog("Enter a name for player " + (i + 1) + "."));
 			}
 		} else {
-			for(int i = 0; i < party.length; i++)
-			{
+			for(int i = 0; i < party.length; i++) {
 				party[i] = new Hero();
 			}
 		}
-
 	}
 
 	public void partyFight( Monster m) {
@@ -133,7 +131,7 @@ public class Party {
 		this.y = y;
 	}
 	public void dropGold() {
-		findingGold = true;
+		boolean findingGold = true;
 		while(findingGold) {
 			randomPlayer = random.nextInt(3);
 			if (Main.getParty().getHero(randomPlayer).isHeroAlive()) {
@@ -156,8 +154,8 @@ public class Party {
 		return successfulGoldPickup;
 	}
 	public void partyRest() {
-		for ( int i = 0; i < party.length; i++) {
-			party[i].addHealth(1);
+		for (Hero aParty : party) {
+			aParty.addHealth(1);
 		}
 		if (random.nextInt(6) == 0) {
 			Main.newMonster();
