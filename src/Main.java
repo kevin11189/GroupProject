@@ -8,14 +8,9 @@ public class Main {
 		titleScreen = new TitleScreen();
 	}
 	public static void newGame(boolean load) {
-		if (load) {
-			monster = new Monster();
-			window = new Window(party);
-		} else {
-			party = new Party(3);
-			monster = new Monster();
-			window = new Window(party);
-		}
+		party = new Party(3, load);
+		monster = new Monster();
+		window = new Window(party);
 
 	}
 	public static Window getWindow() {
@@ -29,8 +24,5 @@ public class Main {
 	}
 	public static void newMonster() {
 		monster = new Monster();
-	}
-	public static void setParty() {
-		party = new Party(3);
 	}
 }

@@ -59,12 +59,15 @@ public class TitleScreen extends JFrame {
 	}
 	private class loadGameListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
+			System.out.println("Loading");
+			Main.newGame(true);
 			try {
 				InputOutput.load();
-				Main.newGame(true);
 			} catch (IOException e1) {
-				e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+				e1.printStackTrace();
 			}
+
+
 		}
 	}
 }

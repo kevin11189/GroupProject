@@ -7,15 +7,23 @@ public class Party {
 	private int x, y, randomPlayer, roomsTraveled;
 	private boolean running, successfulGoldPickup, findingGold;
 	private Random random = new Random();
-	public Party(int players) {
+	public Party(int players, boolean load) {
 		party = new Hero[players];
 		x = 1;
 		y = 1;
 		roomsTraveled = 0;
-		for(int i = 0; i < party.length; i++)
-		{
-			party[i] = new Hero(JOptionPane.showInputDialog("Enter a name for player " + (i + 1) + "."));
+		if (!load) {
+			for(int i = 0; i < party.length; i++)
+			{
+				party[i] = new Hero(JOptionPane.showInputDialog("Enter a name for player " + (i + 1) + "."));
+			}
+		} else {
+			for(int i = 0; i < party.length; i++)
+			{
+				party[i] = new Hero();
+			}
 		}
+
 	}
 
 	public void partyFight( Monster m) {
@@ -56,7 +64,7 @@ public class Party {
 		if (!getHero(0).isHeroAlive() && !getHero(1).isHeroAlive() && !getHero(2).isHeroAlive()) {
 			Main.getWindow().stopMove();
 			Main.getWindow().stopCombatButtons();
-			JOptionPane.showMessageDialog(null, "You have travelled " + roomsTraveled + " rooms." + Main.getParty().getHero(0).getHeroName() + " has found " + Main.getParty().getHero(0).getHeroGold() + "." + Main.getParty().getHero(1).getHeroName() + " has found " + Main.getParty().getHero(1).getHeroGold() + "." + Main.getParty().getHero(2).getHeroName() + " has found " + Main.getParty().getHero(2).getHeroGold() + ".");
+			JOptionPane.showMessageDialog(null, "You have travelled " + roomsTraveled + " rooms. " + Main.getParty().getHero(0).getHeroName() + " has found " + Main.getParty().getHero(0).getHeroGold() + " gold. " + Main.getParty().getHero(1).getHeroName() + " has found " + Main.getParty().getHero(1).getHeroGold() + " gold. " + Main.getParty().getHero(2).getHeroName() + " has found " + Main.getParty().getHero(2).getHeroGold() + " gold.");
 		}
 		Main.getWindow().updateCombatLog();
 		Main.getWindow().updateLoot();
@@ -154,5 +162,12 @@ public class Party {
 			Main.getWindow().stopOptions();
 			Main.getWindow().changeStats(this);
 		}
+	}
+
+	public void setRoomsTraveled(int roomsTraveled) {
+		this.roomsTraveled = roomsTraveled;
+	}
+	public int getRoomsTraveled() {
+		return roomsTraveled;
 	}
 }

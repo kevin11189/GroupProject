@@ -58,6 +58,7 @@ public class InputOutput extends Component {
 
 			outputFile.println(Main.getParty().getX());
 			outputFile.println(Main.getParty().getY());
+			outputFile.println(Main.getParty().getRoomsTraveled());
 
 			outputFile.close();
 			System.out.println("Data written to the file.");
@@ -69,12 +70,16 @@ public class InputOutput extends Component {
 		System.out.print("Load Method Running.");
 		String filename = JOptionPane.showInputDialog("Please input filename:");
 		File file = new File(filename);
-		Scanner inputFile = new Scanner(file);
-		//Party need to be established with a new constructor... Or else it will annoy the user for new names. Will need to make it a complete load
-		//	also, there is going to have to be an update script for the window. If not, there will be broken data. Check delay time to make sure
-		//	there isn't an odd pause in the feedback.. Probably will be weird on mac, but on Windows it should just work.
-		//	Think about that for the presentation.
-		Main.getParty().getHero(0).setHeroHealth(inputFile.nextInt());
-		inputFile.close();
+		if (file.exists()) {
+			Scanner inputFile = new Scanner(file);
+
+			Main.getParty().getHero(0).setHeroHealth(inputFile.nextInt());
+
+			//Working... Need to get all stats and then update the window.
+
+			inputFile.close();
+		}
+
+
 	}
 }

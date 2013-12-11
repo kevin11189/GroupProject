@@ -23,6 +23,17 @@ public class Hero {
 		heroGold = 0;
 		heroAlive = true;
 	}
+	public Hero() {
+		heroName = "";
+		heroHealth = 20;
+		heroStrength = random.nextInt(19) + 1;
+		heroIntelligence = random.nextInt(19) + 1;
+		heroAgility = random.nextInt(19) + 1;
+		heroArmor = 0;
+		heroWeapon = 0;
+		heroGold = 0;
+		heroAlive = true;
+	}
 
 	//Name Methods
 	public String getHeroName() {
