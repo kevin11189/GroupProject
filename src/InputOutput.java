@@ -74,8 +74,38 @@ public class InputOutput extends Component {
 			Scanner inputFile = new Scanner(file);
 
 			Main.getParty().getHero(0).setHeroHealth(inputFile.nextInt());
+			Main.getParty().getHero(0).setHeroStrength(inputFile.nextInt());
+			Main.getParty().getHero(0).setHeroIntelligence(inputFile.nextInt());
+			Main.getParty().getHero(0).setHeroAgility(inputFile.nextInt());
+			Main.getParty().getHero(0).equipArmor(inputFile.nextInt());
+			Main.getParty().getHero(0).equipWeapon(inputFile.nextInt());
+			Main.getParty().getHero(0).setHeroGold(inputFile.nextInt());
+			Main.getParty().getHero(0).setHeroName(inputFile.next());
+			Main.getParty().getHero(0).setHeroAlive(inputFile.nextBoolean());
 
-			//Working... Need to get all stats and then update the window.
+			Main.getParty().getHero(1).setHeroHealth(inputFile.nextInt());
+			Main.getParty().getHero(1).setHeroStrength(inputFile.nextInt());
+			Main.getParty().getHero(1).setHeroIntelligence(inputFile.nextInt());
+			Main.getParty().getHero(1).setHeroAgility(inputFile.nextInt());
+			Main.getParty().getHero(1).equipArmor(inputFile.nextInt());
+			Main.getParty().getHero(1).equipWeapon(inputFile.nextInt());
+			Main.getParty().getHero(1).setHeroGold(inputFile.nextInt());
+			Main.getParty().getHero(1).setHeroName(inputFile.next());
+			Main.getParty().getHero(1).setHeroAlive(inputFile.nextBoolean());
+
+			Main.getParty().getHero(2).setHeroHealth(inputFile.nextInt());
+			Main.getParty().getHero(2).setHeroStrength(inputFile.nextInt());
+			Main.getParty().getHero(2).setHeroIntelligence(inputFile.nextInt());
+			Main.getParty().getHero(2).setHeroAgility(inputFile.nextInt());
+			Main.getParty().getHero(2).equipArmor(inputFile.nextInt());
+			Main.getParty().getHero(2).equipWeapon(inputFile.nextInt());
+			Main.getParty().getHero(2).setHeroGold(inputFile.nextInt());
+			Main.getParty().getHero(2).setHeroName(inputFile.next());
+			Main.getParty().getHero(2).setHeroAlive(inputFile.nextBoolean());
+
+			Main.getParty().setX(inputFile.nextInt());
+			Main.getParty().setY(inputFile.nextInt());
+			Main.getParty().setRoomsTraveled(inputFile.nextInt());
 
 			inputFile.close();
 		}

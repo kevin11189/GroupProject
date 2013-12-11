@@ -24,7 +24,7 @@ public class Hero {
 		heroAlive = true;
 	}
 	public Hero() {
-		heroName = "";
+		heroName = "Loading...";
 		heroHealth = 20;
 		heroStrength = random.nextInt(19) + 1;
 		heroIntelligence = random.nextInt(19) + 1;
@@ -38,6 +38,9 @@ public class Hero {
 	//Name Methods
 	public String getHeroName() {
 		return heroName;
+	}
+	public void setHeroName(String heroName) {
+		this.heroName = heroName;
 	}
 
 	//Weapon Methods
@@ -133,15 +136,24 @@ public class Hero {
 	public int getHeroAgility() {
 		return heroAgility;
 	}
+	public void setHeroAgility(int heroAgility) {
+		this.heroAgility = heroAgility;
+	}
 
 	//Intelligence Methods
 	public int getHeroIntelligence() {
 		return heroIntelligence;
 	}
+	public void setHeroIntelligence(int heroIntelligence) {
+		this.heroIntelligence = heroIntelligence;
+	}
 
 	//Strength Methods
 	public int getHeroStrength() {
 		return heroStrength;
+	}
+	public void setHeroStrength(int heroStrength) {
+		this.heroStrength = heroStrength;
 	}
 
 	//Health Methods
@@ -177,6 +189,9 @@ public class Hero {
 	//Alive Methods
 	public boolean isHeroAlive() {
 		return heroAlive;
+	}
+	public void setHeroAlive(boolean heroAlive) {
+		this.heroAlive = heroAlive;
 	}
 
 	//Attacked Methods

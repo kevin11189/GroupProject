@@ -66,7 +66,7 @@ public class TitleScreen extends JFrame {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-
+			Main.getWindow().updateAfterLoad();
 
 		}
 	}

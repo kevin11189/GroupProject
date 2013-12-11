@@ -314,7 +314,6 @@ public class Window extends JFrame {
         JPanel equipButtonPanel = new JPanel(new GridLayout(0, 2));
 		equipButtonPanel.setBounds(10, 180, 370, 40);
 		equipButtonPanel.setBackground(Color.BLACK);
-		//equipOne, equipTwo, equipThree, equipNone
 		equipOne = new JButton("Equip " + Main.getParty().getHero(0).getHeroName());
 		equipTwo = new JButton("Equip " + Main.getParty().getHero(1).getHeroName());
 		equipThree = new JButton("Equip " + Main.getParty().getHero(2).getHeroName());
@@ -332,8 +331,8 @@ public class Window extends JFrame {
 		JPanel optionPanel = new JPanel(new GridLayout(0, 2));
 		optionPanel.setBounds(10, 240, 370, 20);
 		setBackground(Color.BLACK);
-		saveButton = new JButton("SAVE!");
-		restButton = new JButton("REST!");
+		saveButton = new JButton("Save");
+		restButton = new JButton("Rest");
 		saveButton.addActionListener(new saveListener());
 		restButton.addActionListener(new restListener());
 		optionPanel.add(saveButton);
@@ -463,6 +462,13 @@ public class Window extends JFrame {
 		monsterIntelligence.setText(Integer.toString(Main.getMonster().getMonsterIntelligence()));
 		monsterAgility.setText(Integer.toString(Main.getMonster().getMonsterAgility()));
 
+	}
+	public void updateAfterLoad() {
+		changeStats(Main.getParty());
+		updateMiniMap();
+		equipOne.setText("Equip " + Main.getParty().getHero(0).getHeroName());
+		equipTwo.setText("Equip " + Main.getParty().getHero(1).getHeroName());
+		equipThree.setText("Equip " + Main.getParty().getHero(2).getHeroName());
 	}
 	public void updateMiniMap() {
 		int x = Main.getParty().getX();
