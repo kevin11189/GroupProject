@@ -8,17 +8,14 @@ public class InputOutput extends Component {
 	public static void save() throws IOException {
 		String filename;
 		boolean overwrite;
-		System.out.print("Save Method Running.");
 		filename = JOptionPane.showInputDialog("Please input filename:");
 		File file = new File(filename);
 		if (file.exists()) {
 			int dialogButton = JOptionPane.YES_NO_OPTION;
 			int dialogResult = JOptionPane.showConfirmDialog(null, "Save file exists. Would you like to overwrite it?", "Confirm",dialogButton);
 			if(dialogResult==0) {
-				System.out.println("Yes option");
 				overwrite = true;
 			} else {
-				System.out.println("No Option");
 				overwrite = false;
 			}
 		} else {
@@ -61,13 +58,11 @@ public class InputOutput extends Component {
 			outputFile.println(Main.getParty().getRoomsTraveled());
 
 			outputFile.close();
-			System.out.println("Data written to the file.");
 		}
 
 
 	}
 	public static void load() throws IOException {
-		System.out.print("Load Method Running.");
 		String filename = JOptionPane.showInputDialog("Please input filename:");
 		File file = new File(filename);
 		if (file.exists()) {

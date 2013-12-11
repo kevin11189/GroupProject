@@ -59,7 +59,6 @@ public class TitleScreen extends JFrame {
 	}
 	private class loadGameListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Loading");
 			Main.newGame(true);
 			try {
 				InputOutput.load();

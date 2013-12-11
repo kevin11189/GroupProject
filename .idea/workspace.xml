@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hero.java" afterPath="$PROJECT_DIR$/src/Hero.java" />
+    <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InputOutput.java" afterPath="$PROJECT_DIR$/src/InputOutput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Party.java" afterPath="$PROJECT_DIR$/src/Party.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TitleScreen.java" afterPath="$PROJECT_DIR$/src/TitleScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window.java" afterPath="$PROJECT_DIR$/src/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GroupProject.iws" />
@@ -71,10 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="21" selection-start="584" selection-end="587" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+            <state line="25" column="32" selection-start="598" selection-end="598" vertical-scroll-proportion="0.62091506" vertical-offset="0" max-vertical-offset="459">
               <folding />
             </state>
           </provider>
@@ -83,7 +80,7 @@
       <file leaf-file-name="Window.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="467" column="24" selection-start="20539" selection-end="20539" vertical-scroll-proportion="0.0" vertical-offset="6891" max-vertical-offset="10575">
+            <state line="467" column="24" selection-start="20539" selection-end="20539" vertical-scroll-proportion="0.0" vertical-offset="10116" max-vertical-offset="10575">
               <folding />
             </state>
           </provider>
@@ -92,8 +89,10 @@
       <file leaf-file-name="TitleScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="47" selection-start="2340" selection-end="2340" vertical-scroll-proportion="0.77124184" vertical-offset="606" max-vertical-offset="1125">
-              <folding />
+            <state line="61" column="0" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.0" vertical-offset="711" max-vertical-offset="1170">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,7 +100,7 @@
       <file leaf-file-name="Hero.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="193" column="35" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.627451" vertical-offset="2427" max-vertical-offset="3240">
+            <state line="193" column="35" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="3240">
               <folding>
                 <element signature="e#923#924#0" expanded="true" />
                 <element signature="e#945#946#0" expanded="true" />
@@ -128,10 +127,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputOutput.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="InputOutput.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InputOutput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="0" selection-start="5100" selection-end="5100" vertical-scroll-proportion="0.8039216" vertical-offset="1266" max-vertical-offset="1830">
+            <state line="60" column="0" selection-start="2718" selection-end="2718" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1755">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,10 +206,10 @@
         <option value="$PROJECT_DIR$/src/Save.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Hero.java" />
-        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
         <option value="$PROJECT_DIR$/src/Window.java" />
         <option value="$PROJECT_DIR$/src/Party.java" />
         <option value="$PROJECT_DIR$/src/InputOutput.java" />
+        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
       </list>
     </option>
   </component>
@@ -578,7 +577,7 @@
       <workItem from="1386777134554" duration="122000" />
       <workItem from="1386782627988" duration="24000" />
       <workItem from="1386782660627" duration="1337000" />
-      <workItem from="1386784267684" duration="1450000" />
+      <workItem from="1386784267684" duration="2123000" />
     </task>
     <task id="LOCAL-00001" summary="Reworked File Structure. Not sure how it happend but everything was a folder deep and it was annoying to switch between Mac and Windows. Hopefully, this resolves it.">
       <created>1386658006964</created>
@@ -612,11 +611,15 @@
       <created>1386704692071</created>
       <updated>1386704692071</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Introduced functional saving. All that's left is breakable equipment. Then all the extras are done.">
+      <created>1386785791681</created>
+      <updated>1386785791681</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2933000" />
+    <option name="totallyTimeSpent" value="3606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1420" height="790" extended-state="0" />
@@ -671,7 +674,8 @@
     <MESSAGE value="Added buttons for saving and resting. They are having odd behaviors in respect to how they are disabling upon combat sequence. Going to check the behavior on my PC later to see if it's a mac thing. AWT on mac has been an unpleasant experience." />
     <MESSAGE value="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult." />
     <MESSAGE value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
-    <option name="LAST_COMMIT_MESSAGE" value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
+    <MESSAGE value="Introduced functional saving. All that's left is breakable equipment. Then all the extras are done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduced functional saving. All that's left is breakable equipment. Then all the extras are done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -698,7 +702,9 @@
     <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="12" selection-start="2211" selection-end="2211" vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="1185">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -775,7 +781,9 @@
     <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="30" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1292">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -852,7 +860,9 @@
     <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="30" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1292">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -929,7 +939,9 @@
     <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="30" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1292">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,8 +1098,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="47" selection-start="2340" selection-end="2340" vertical-scroll-proportion="0.77124184" vertical-offset="606" max-vertical-offset="1125">
-          <folding />
+        <state line="61" column="0" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.0" vertical-offset="711" max-vertical-offset="1170">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1104,7 +1118,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="584" selection-end="587" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+        <state line="25" column="32" selection-start="598" selection-end="598" vertical-scroll-proportion="0.62091506" vertical-offset="0" max-vertical-offset="459">
           <folding />
         </state>
       </provider>
@@ -1118,7 +1132,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="35" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.627451" vertical-offset="2427" max-vertical-offset="3240">
+        <state line="193" column="35" selection-start="4684" selection-end="4684" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="3240">
           <folding>
             <element signature="e#923#924#0" expanded="true" />
             <element signature="e#945#946#0" expanded="true" />
@@ -1146,7 +1160,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InputOutput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="0" selection-start="5100" selection-end="5100" vertical-scroll-proportion="0.8039216" vertical-offset="1266" max-vertical-offset="1830">
+        <state line="60" column="0" selection-start="2718" selection-end="2718" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1755">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
