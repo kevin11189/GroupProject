@@ -56,13 +56,13 @@ public class Hero {
 	}
 	public String getHeroWeaponName() {
 		if ( heroWeapon == 0 ) {
-			return "stick";
+			return "Fist";
 		} else if ( heroWeapon == 1 ) {
-			return "knife";
+			return "Knife";
 		} else if ( heroWeapon == 2 ) {
-			return "sword";
+			return "Sword";
 		} else if ( heroWeapon == 3 ) {
-			return "shotgun";
+			return "Shotgun";
 		} else {
 			return "weapon error";
 		}
@@ -78,36 +78,36 @@ public class Hero {
 	}
 	public String getHeroArmorName() {
 		if ( heroArmor == 0 ) {
-			return "birthday suit";
+			return "Clothes";
 		} else if ( heroArmor == 1 ) {
-			return "jacket";
+			return "Jacket";
 		} else if ( heroArmor == 2 ) {
-			return "shield";
+			return "Shield";
 		} else if ( heroArmor == 3 ) {
-			return "suit o' armor";
+			return "Mail";
 		} else {
 			return "armor error";
 		}
 	}
 	public static String getEquipmentType(Monster m) {
 		if (m.getMonsterEquipment() == 1) {
-			return "knife (+1 attack)";
+			return "Knife (+1 attack)";
 		} else if (m.getMonsterEquipment() == 2) {
-			return "jacket (+1 defense)";
+			return "Jacket (+1 defense)";
 		} else if (m.getMonsterEquipment() == 3) {
-			return "sword (+2 attack)";
+			return "Sword (+2 attack)";
 		} else if (m.getMonsterEquipment() == 4) {
-			return "shield (+2 defense)";
+			return "Shield (+2 defense)";
 		} else if (m.getMonsterEquipment() == 5) {
-			return "shotgun (+3 attack)";
+			return "Shotgun (+3 attack)";
 		} else if (m.getMonsterEquipment() == 6) {
-			return "suit o' armor (+3 defense)";
+			return "Mail (+3 defense)";
 		} else if (m.getMonsterEquipment() == 7) {
-			return "small potion (+1 health)";
+			return "Small Potion (+1 health)";
 		} else if (m.getMonsterEquipment() == 8) {
-			return "medium potion (+2 health)";
+			return "Medium Potion (+2 health)";
 		} else if (m.getMonsterEquipment() == 9) {
-			return "large potion (+3 health)";
+			return "Large Potion (+3 health)";
 		} else {
 			return "nothing.";
 		}
@@ -219,7 +219,7 @@ public class Hero {
 		setHeroAttack(true);
 		if (m.isMonsterAlive()) {
 			if ( (random.nextInt(19) + 1) <= heroAgility) {
-				m.addMonsterHealthPoints(- ((int)Math.ceil((double)heroStrength/3.0) + heroWeapon));
+				m.addMonsterHealthPoints(- getHeroDamage());
 				if (heroWeaponDurability > 0) {
 					addHeroWeaponDurability(-1);
 				}
@@ -263,5 +263,15 @@ public class Hero {
 		} else if (heroWeaponDurability >= 10) {
 			heroWeaponDurability = 10;
 		}
+	}
+
+	public int getHeroDamage() {
+		int heroDamage;
+		heroDamage = heroWeapon;
+		if (heroStrength % 3 > 0) {
+			heroDamage++;
+		}
+		heroDamage += heroStrength/3;
+		return heroDamage;
 	}
 }

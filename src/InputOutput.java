@@ -24,7 +24,9 @@ public class InputOutput extends Component {
 			outputFile.println(Main.getParty().getHero(0).getHeroIntelligence());
 			outputFile.println(Main.getParty().getHero(0).getHeroAgility());
 			outputFile.println(Main.getParty().getHero(0).getHeroArmor());
+			outputFile.println(Main.getParty().getHero(0).getHeroArmorDurability());
 			outputFile.println(Main.getParty().getHero(0).getHeroWeapon());
+			outputFile.println(Main.getParty().getHero(0).getHeroWeaponDurability());
 			outputFile.println(Main.getParty().getHero(0).getHeroGold());
 			outputFile.println(Main.getParty().getHero(0).getHeroName());
 			outputFile.println(Main.getParty().getHero(0).isHeroAlive());
@@ -34,7 +36,9 @@ public class InputOutput extends Component {
 			outputFile.println(Main.getParty().getHero(1).getHeroIntelligence());
 			outputFile.println(Main.getParty().getHero(1).getHeroAgility());
 			outputFile.println(Main.getParty().getHero(1).getHeroArmor());
+			outputFile.println(Main.getParty().getHero(1).getHeroArmorDurability());
 			outputFile.println(Main.getParty().getHero(1).getHeroWeapon());
+			outputFile.println(Main.getParty().getHero(1).getHeroWeaponDurability());
 			outputFile.println(Main.getParty().getHero(1).getHeroGold());
 			outputFile.println(Main.getParty().getHero(1).getHeroName());
 			outputFile.println(Main.getParty().getHero(1).isHeroAlive());
@@ -44,7 +48,9 @@ public class InputOutput extends Component {
 			outputFile.println(Main.getParty().getHero(2).getHeroIntelligence());
 			outputFile.println(Main.getParty().getHero(2).getHeroAgility());
 			outputFile.println(Main.getParty().getHero(2).getHeroArmor());
+			outputFile.println(Main.getParty().getHero(2).getHeroArmorDurability());
 			outputFile.println(Main.getParty().getHero(2).getHeroWeapon());
+			outputFile.println(Main.getParty().getHero(2).getHeroWeaponDurability());
 			outputFile.println(Main.getParty().getHero(2).getHeroGold());
 			outputFile.println(Main.getParty().getHero(2).getHeroName());
 			outputFile.println(Main.getParty().getHero(2).isHeroAlive());
@@ -59,47 +65,60 @@ public class InputOutput extends Component {
 
 	}
 	public static void load() throws IOException {
-		String filename = JOptionPane.showInputDialog("Please input filename:");
-		File file = new File(filename);
-		if (file.exists()) {
-			Scanner inputFile = new Scanner(file);
+		boolean saveFound = false;
+		while (!saveFound) {
 
-			Main.getParty().getHero(0).setHeroHealth(inputFile.nextInt());
-			Main.getParty().getHero(0).setHeroStrength(inputFile.nextInt());
-			Main.getParty().getHero(0).setHeroIntelligence(inputFile.nextInt());
-			Main.getParty().getHero(0).setHeroAgility(inputFile.nextInt());
-			Main.getParty().getHero(0).equipArmor(inputFile.nextInt());
-			Main.getParty().getHero(0).equipWeapon(inputFile.nextInt());
-			Main.getParty().getHero(0).setHeroGold(inputFile.nextInt());
-			Main.getParty().getHero(0).setHeroName(inputFile.next());
-			Main.getParty().getHero(0).setHeroAlive(inputFile.nextBoolean());
+			String filename = JOptionPane.showInputDialog("Please input filename:");
+			File file = new File(filename);
+			if (file.exists()) {
+				Scanner inputFile = new Scanner(file);
 
-			Main.getParty().getHero(1).setHeroHealth(inputFile.nextInt());
-			Main.getParty().getHero(1).setHeroStrength(inputFile.nextInt());
-			Main.getParty().getHero(1).setHeroIntelligence(inputFile.nextInt());
-			Main.getParty().getHero(1).setHeroAgility(inputFile.nextInt());
-			Main.getParty().getHero(1).equipArmor(inputFile.nextInt());
-			Main.getParty().getHero(1).equipWeapon(inputFile.nextInt());
-			Main.getParty().getHero(1).setHeroGold(inputFile.nextInt());
-			Main.getParty().getHero(1).setHeroName(inputFile.next());
-			Main.getParty().getHero(1).setHeroAlive(inputFile.nextBoolean());
+				Main.getParty().getHero(0).setHeroHealth(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroStrength(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroIntelligence(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroAgility(inputFile.nextInt());
+				Main.getParty().getHero(0).equipArmor(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroArmorDurability(inputFile.nextInt());
+				Main.getParty().getHero(0).equipWeapon(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroWeaponDurability(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroGold(inputFile.nextInt());
+				Main.getParty().getHero(0).setHeroName(inputFile.next());
+				Main.getParty().getHero(0).setHeroAlive(inputFile.nextBoolean());
 
-			Main.getParty().getHero(2).setHeroHealth(inputFile.nextInt());
-			Main.getParty().getHero(2).setHeroStrength(inputFile.nextInt());
-			Main.getParty().getHero(2).setHeroIntelligence(inputFile.nextInt());
-			Main.getParty().getHero(2).setHeroAgility(inputFile.nextInt());
-			Main.getParty().getHero(2).equipArmor(inputFile.nextInt());
-			Main.getParty().getHero(2).equipWeapon(inputFile.nextInt());
-			Main.getParty().getHero(2).setHeroGold(inputFile.nextInt());
-			Main.getParty().getHero(2).setHeroName(inputFile.next());
-			Main.getParty().getHero(2).setHeroAlive(inputFile.nextBoolean());
+				Main.getParty().getHero(1).setHeroHealth(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroStrength(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroIntelligence(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroAgility(inputFile.nextInt());
+				Main.getParty().getHero(1).equipArmor(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroArmorDurability(inputFile.nextInt());
+				Main.getParty().getHero(1).equipWeapon(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroWeaponDurability(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroGold(inputFile.nextInt());
+				Main.getParty().getHero(1).setHeroName(inputFile.next());
+				Main.getParty().getHero(1).setHeroAlive(inputFile.nextBoolean());
 
-			Main.getParty().setX(inputFile.nextInt());
-			Main.getParty().setY(inputFile.nextInt());
-			Main.getParty().setRoomsTraveled(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroHealth(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroStrength(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroIntelligence(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroAgility(inputFile.nextInt());
+				Main.getParty().getHero(2).equipArmor(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroArmorDurability(inputFile.nextInt());
+				Main.getParty().getHero(2).equipWeapon(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroWeaponDurability(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroGold(inputFile.nextInt());
+				Main.getParty().getHero(2).setHeroName(inputFile.next());
+				Main.getParty().getHero(2).setHeroAlive(inputFile.nextBoolean());
 
-			inputFile.close();
+				Main.getParty().setX(inputFile.nextInt());
+				Main.getParty().setY(inputFile.nextInt());
+				Main.getParty().setRoomsTraveled(inputFile.nextInt());
+
+				inputFile.close();
+
+				saveFound = true;
+			}
 		}
+
 
 
 	}

@@ -44,7 +44,8 @@ public class TitleScreen extends JFrame {
 		pane.add(titlePanel);
 		pane.add(buttonNew);
 		pane.add(buttonLoad);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//JFrame.EXIT_ON_CLOSE works fine but my IDE was given me warning about so for the sake of pleasing the all magical intellij, went with WindowConstants
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);

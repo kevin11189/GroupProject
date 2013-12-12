@@ -548,7 +548,7 @@ public class Window extends JFrame {
 		} else {
 			if (Main.getParty().getHero(0).didHeroAttack()) {
 				if (Main.getParty().getHero(0).didHeroHit()) {
-					player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(0).getHeroStrength()/3.0) + Main.getParty().getHero(0).getHeroWeapon()));//attacked hit
+					player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + Main.getParty().getHero(0).getHeroDamage());//attacked hit
 				} else {
 					player0Damage.setText(Main.getParty().getHero(0).getHeroName() + " missed.");//attacked missed
 				}
@@ -557,7 +557,7 @@ public class Window extends JFrame {
 			}
 			if (Main.getParty().getHero(1).didHeroAttack()) {
 				if (Main.getParty().getHero(1).didHeroHit()) {
-					player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(1).getHeroStrength()/3.0) + Main.getParty().getHero(1).getHeroWeapon()));//attacked hit
+					player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + Main.getParty().getHero(1).getHeroDamage());//attacked hit
 				} else {
 					player1Damage.setText(Main.getParty().getHero(1).getHeroName() + " missed.");//attacked missed
 				}
@@ -566,7 +566,7 @@ public class Window extends JFrame {
 			}
 			if (Main.getParty().getHero(2).didHeroAttack()) {
 				if (Main.getParty().getHero(2).didHeroHit()) {
-					player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + ((int)Math.round((double)Main.getParty().getHero(2).getHeroStrength()/3.0) + Main.getParty().getHero(2).getHeroWeapon()));//attacked hit
+					player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " attacks " + Main.getMonster().getMonsterName() + " for " + Main.getParty().getHero(2).getHeroDamage());//attacked hit
 				} else {
 					player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " missed.");//attacked missed
 				}
@@ -576,7 +576,7 @@ public class Window extends JFrame {
 			//monster
 			if (Main.getMonster().isMonsterAttacked()) {
 				if (Main.getMonster().isMonsterHit()) {
-					monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget() + " for " + (int)Math.round((double)Main.getMonster().getMonsterStrength()/3.0));//attacked hit
+					monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget().getHeroName() + " for " + Main.getMonster().getMonsterDamage(Main.getMonster().getMonsterTarget()));//attacked hit
 				} else {
 					monsterDamage.setText(Main.getMonster().getMonsterName() + " missed.");//attacked missed
 				}
