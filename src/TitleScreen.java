@@ -20,7 +20,7 @@ public class TitleScreen extends JFrame {
 		JLabel titleText = new JLabel("Group Project");
 		JLabel author1 = new JLabel("Kevin Rutten");
 		JLabel author2 = new JLabel("William Reilly");
-		JLabel author3 = new JLabel("Alban S");
+		JLabel author3 = new JLabel("Alban Shekaj");
 		JLabel author4 = new JLabel("Spencer Cruz");
 		titleText.setForeground(Color.WHITE);
 		author1.setForeground(Color.WHITE);
