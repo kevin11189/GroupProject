@@ -7,7 +7,9 @@ public class Hero {
     private int heroIntelligence;
     private int heroAgility;
     private int heroArmor;
+	private int heroArmorDurability;
     private int heroWeapon;
+	private int heroWeaponDurability;
     private int heroGold;
 	private String heroName;
 	private boolean heroAlive, heroHit, heroAttacked;
@@ -46,6 +48,7 @@ public class Hero {
 	//Weapon Methods
 	public void equipWeapon(int heroWeapon) {
 		this.heroWeapon = heroWeapon;
+		heroWeaponDurability = 10;
 		Main.getWindow().changeStats(Main.getParty());
 	}
 	public int getHeroWeapon() {
@@ -67,6 +70,7 @@ public class Hero {
 
 	public void equipArmor(int heroArmor) {
 		this.heroArmor = heroArmor;
+		heroArmorDurability = 10;
 		Main.getWindow().changeStats(Main.getParty());
 	}
 	public int getHeroArmor() {
@@ -216,11 +220,48 @@ public class Hero {
 		if (m.isMonsterAlive()) {
 			if ( (random.nextInt(19) + 1) <= heroAgility) {
 				m.addMonsterHealthPoints(- ((int)Math.ceil((double)heroStrength/3.0) + heroWeapon));
+				if (heroWeaponDurability > 0) {
+					addHeroWeaponDurability(-1);
+				}
 				setHeroHit(true);
 			} else {
 				setHeroHit(false);
 			}
 		}
 
+	}
+
+	public int getHeroArmorDurability() {
+		return heroArmorDurability;
+	}
+
+	public void setHeroArmorDurability(int heroArmorDurability) {
+		this.heroArmorDurability = heroArmorDurability;
+	}
+
+	public void addHeroArmorDurability(int i) {
+		this.heroArmorDurability += i;
+		if (heroArmorDurability <= 0) {
+			heroArmor = 0;
+		} else if ( heroArmorDurability >= 10) {
+			heroArmor = 10;
+		}
+	}
+
+	public int getHeroWeaponDurability() {
+		return heroWeaponDurability;
+	}
+
+	public void setHeroWeaponDurability(int heroWeaponDurability) {
+		this.heroWeaponDurability = heroWeaponDurability;
+	}
+
+	public void addHeroWeaponDurability(int i) {
+		this.heroWeaponDurability += i;
+		if (heroWeaponDurability <= 0) {
+			heroWeapon = 0;
+		} else if (heroWeaponDurability >= 10) {
+			heroWeaponDurability = 10;
+		}
 	}
 }

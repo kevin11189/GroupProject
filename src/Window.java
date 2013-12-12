@@ -434,8 +434,16 @@ public class Window extends JFrame {
 		player0Strength.setText(Integer.toString(p.getHero(0).getHeroStrength()));
 		player0Intelligence.setText(Integer.toString(p.getHero(0).getHeroIntelligence()));
 		player0Agility.setText(Integer.toString(p.getHero(0).getHeroAgility()));
-		player0Armor.setText(p.getHero(0).getHeroArmorName() + " (+" + Integer.toString(p.getHero(0).getHeroArmor()) + ")");
-		player0Weapon.setText(p.getHero(0).getHeroWeaponName() + " (+" + Integer.toString(p.getHero(0).getHeroWeapon()) + ")");
+		if (p.getHero(0).getHeroArmor() > 0) {
+			player0Armor.setText(p.getHero(0).getHeroArmorName() + "(+" + Integer.toString(p.getHero(0).getHeroArmor()) + ")" + p.getHero(0).getHeroArmorDurability() + "/10");
+		} else {
+			player0Armor.setText(p.getHero(0).getHeroArmorName() + "(+" + Integer.toString(p.getHero(0).getHeroArmor()) + ")");
+		}
+		if (p.getHero(0).getHeroWeapon() > 0) {
+			player0Weapon.setText(p.getHero(0).getHeroWeaponName() + "(+" + Integer.toString(p.getHero(0).getHeroWeapon()) + ")" + p.getHero(0).getHeroWeaponDurability() + "/10");
+		} else {
+			player0Weapon.setText(p.getHero(0).getHeroWeaponName() + "(+" + Integer.toString(p.getHero(0).getHeroWeapon()) + ")");
+		}
 		player0Gold.setText(Integer.toString(p.getHero(0).getHeroGold()));
 		//player1
 		player1Name.setText(p.getHero(1).getHeroName());
@@ -443,8 +451,16 @@ public class Window extends JFrame {
 		player1Strength.setText(Integer.toString(p.getHero(1).getHeroStrength()));
 		player1Intelligence.setText(Integer.toString(p.getHero(1).getHeroIntelligence()));
 		player1Agility.setText(Integer.toString(p.getHero(1).getHeroAgility()));
-		player1Armor.setText(p.getHero(1).getHeroArmorName() + " (+" + Integer.toString(p.getHero(1).getHeroArmor()) + ")");
-		player1Weapon.setText(p.getHero(1).getHeroWeaponName() + " (+" + Integer.toString(p.getHero(1).getHeroWeapon()) + ")");
+		if (p.getHero(1).getHeroArmor() > 0) {
+			player1Armor.setText(p.getHero(1).getHeroArmorName() + "(+" + Integer.toString(p.getHero(1).getHeroArmor()) + ")" + p.getHero(1).getHeroArmorDurability() + "/10");
+		} else {
+			player1Armor.setText(p.getHero(1).getHeroArmorName() + "(+" + Integer.toString(p.getHero(1).getHeroArmor()) + ")");
+		}
+		if (p.getHero(1).getHeroWeapon() > 0) {
+			player1Weapon.setText(p.getHero(1).getHeroWeaponName() + "(+" + Integer.toString(p.getHero(1).getHeroWeapon()) + ")" + p.getHero(1).getHeroWeaponDurability() + "/10");
+		} else {
+			player1Weapon.setText(p.getHero(1).getHeroWeaponName() + "(+" + Integer.toString(p.getHero(1).getHeroWeapon()) + ")");
+		}
 		player1Gold.setText(Integer.toString(p.getHero(1).getHeroGold()));
 		//player2
 		player2Name.setText(p.getHero(2).getHeroName());
@@ -452,8 +468,16 @@ public class Window extends JFrame {
 		player2Strength.setText(Integer.toString(p.getHero(2).getHeroStrength()));
 		player2Intelligence.setText(Integer.toString(p.getHero(2).getHeroIntelligence()));
 		player2Agility.setText(Integer.toString(p.getHero(2).getHeroAgility()));
-		player2Armor.setText(p.getHero(2).getHeroArmorName() + " (+" + Integer.toString(p.getHero(2).getHeroArmor()) + ")");
-		player2Weapon.setText(p.getHero(2).getHeroWeaponName() + " (+" + Integer.toString(p.getHero(2).getHeroWeapon()) + ")");
+		if (p.getHero(2).getHeroArmor() > 0) {
+			player2Armor.setText(p.getHero(2).getHeroArmorName() + "(+" + Integer.toString(p.getHero(2).getHeroArmor()) + ")" + p.getHero(2).getHeroArmorDurability() + "/10");
+		} else {
+			player2Armor.setText(p.getHero(2).getHeroArmorName() + "(+" + Integer.toString(p.getHero(2).getHeroArmor()) + ")");
+		}
+		if (p.getHero(2).getHeroWeapon() > 0) {
+			player2Weapon.setText(p.getHero(2).getHeroWeaponName() + "(+" + Integer.toString(p.getHero(2).getHeroWeapon()) + ")" + p.getHero(2).getHeroWeaponDurability() + "/10");
+		} else {
+			player2Weapon.setText(p.getHero(2).getHeroWeaponName() + "(+" + Integer.toString(p.getHero(2).getHeroWeapon()) + ")");
+		}
 		player2Gold.setText(Integer.toString(p.getHero(2).getHeroGold()));
 		//monster
 		monsterName.setText(Main.getMonster().getMonsterName());

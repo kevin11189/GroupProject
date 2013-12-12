@@ -143,6 +143,7 @@ public class Monster {
 					monsterHit = true;
 					this.setMonsterTarget(Main.getParty().getHero(targetPlayer).getHeroName());
 					p.getHero(targetPlayer).addHealth(- ((int)Math.ceil((double)monsterStrength/3.0) + p.getHero(targetPlayer).getHeroArmor()));
+					p.getHero(targetPlayer).addHeroArmorDurability(-1);
 				} else {
 					monsterHit = false;
 				}
