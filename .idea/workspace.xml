@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hero.java" afterPath="$PROJECT_DIR$/src/Hero.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Monster.java" afterPath="$PROJECT_DIR$/src/Monster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window.java" afterPath="$PROJECT_DIR$/src/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GroupProject.iws" />
@@ -101,7 +98,7 @@
       <file leaf-file-name="Hero.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="48" selection-start="5440" selection-end="5440" vertical-scroll-proportion="1.3594772" vertical-offset="2181" max-vertical-offset="3555">
+            <state line="171" column="54" selection-start="4270" selection-end="4270" vertical-scroll-proportion="0.11764706" vertical-offset="2211" max-vertical-offset="3555">
               <folding>
                 <element signature="e#5555#5556#0" expanded="true" />
                 <element signature="e#5588#5589#0" expanded="true" />
@@ -556,7 +553,7 @@
       <workItem from="1386782627988" duration="24000" />
       <workItem from="1386782660627" duration="1337000" />
       <workItem from="1386784267684" duration="2242000" />
-      <workItem from="1386872609301" duration="1343000" />
+      <workItem from="1386872609301" duration="1425000" />
     </task>
     <task id="LOCAL-00001" summary="Reworked File Structure. Not sure how it happend but everything was a folder deep and it was annoying to switch between Mac and Windows. Hopefully, this resolves it.">
       <created>1386658006964</created>
@@ -598,11 +595,15 @@
       <created>1386786415840</created>
       <updated>1386786415840</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added durability to equipment.">
+      <created>1386873990500</created>
+      <updated>1386873990500</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5068000" />
+    <option name="totallyTimeSpent" value="5150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1420" height="790" extended-state="0" />
@@ -659,7 +660,8 @@
     <MESSAGE value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
     <MESSAGE value="Introduced functional saving. All that's left is breakable equipment. Then all the extras are done." />
     <MESSAGE value="Removed some console prints for dev notes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed some console prints for dev notes." />
+    <MESSAGE value="Added durability to equipment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added durability to equipment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1065,7 +1067,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="48" selection-start="5440" selection-end="5440" vertical-scroll-proportion="1.3594772" vertical-offset="2181" max-vertical-offset="3555">
+        <state line="171" column="54" selection-start="4270" selection-end="4270" vertical-scroll-proportion="0.11764706" vertical-offset="2211" max-vertical-offset="3555">
           <folding>
             <element signature="e#5555#5556#0" expanded="true" />
             <element signature="e#5588#5589#0" expanded="true" />
