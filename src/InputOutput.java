@@ -13,11 +13,7 @@ public class InputOutput extends Component {
 		if (file.exists()) {
 			int dialogButton = JOptionPane.YES_NO_OPTION;
 			int dialogResult = JOptionPane.showConfirmDialog(null, "Save file exists. Would you like to overwrite it?", "Confirm",dialogButton);
-			if(dialogResult==0) {
-				overwrite = true;
-			} else {
-				overwrite = false;
-			}
+			overwrite = (dialogResult == 0);
 		} else {
 			overwrite = true;
 		}
