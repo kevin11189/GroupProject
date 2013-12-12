@@ -1,4 +1,3 @@
-
 public class Main {
 	public static TitleScreen titleScreen;
 	private static Window window;
