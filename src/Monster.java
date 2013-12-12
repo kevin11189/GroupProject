@@ -184,7 +184,7 @@ public class Monster {
 	}
 
 	public int getMonsterDamage(Hero h) {
-		int monsterDamage = 0;
+		int monsterDamage;
 		monsterDamage = monsterStrength/3;
 		if (monsterStrength%3 > 0) {
 			monsterDamage++;

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b450f1c3-8114-416a-a68c-364700b6d457" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hero.java" afterPath="$PROJECT_DIR$/src/Hero.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/InputOutput.java" afterPath="$PROJECT_DIR$/src/InputOutput.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Monster.java" afterPath="$PROJECT_DIR$/src/Monster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TitleScreen.java" afterPath="$PROJECT_DIR$/src/TitleScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window.java" afterPath="$PROJECT_DIR$/src/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GroupProject.iws" />
@@ -71,10 +67,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="4" selection-start="460" selection-end="460" vertical-scroll-proportion="0.55676854" vertical-offset="0" max-vertical-offset="458">
+            <state line="19" column="4" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <folding>
                 <element signature="e#476#477#0" expanded="true" />
               </folding>
@@ -129,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Monster.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Monster.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Monster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="0" selection-start="4335" selection-end="4335" vertical-scroll-proportion="0.0" vertical-offset="2010" max-vertical-offset="2700">
+            <state line="191" column="42" selection-start="4879" selection-end="4879" vertical-scroll-proportion="0.6069869" vertical-offset="2242" max-vertical-offset="2700">
               <folding>
                 <element signature="e#4292#4293#0" expanded="true" />
                 <element signature="e#4333#4334#0" expanded="true" />
@@ -168,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/InputOutput.java" />
         <option value="$PROJECT_DIR$/src/TitleScreen.java" />
         <option value="$PROJECT_DIR$/src/Hero.java" />
-        <option value="$PROJECT_DIR$/src/Monster.java" />
         <option value="$PROJECT_DIR$/src/Window.java" />
+        <option value="$PROJECT_DIR$/src/Monster.java" />
       </list>
     </option>
   </component>
@@ -423,7 +419,7 @@
       <workItem from="1386743908059" duration="132000" />
       <workItem from="1386744056547" duration="519000" />
       <workItem from="1386778883714" duration="1221000" />
-      <workItem from="1386874063016" duration="2139000" />
+      <workItem from="1386874063016" duration="2200000" />
     </task>
     <task id="LOCAL-00001" summary="Reworked File Structure. Not sure how it happend but everything was a folder deep and it was annoying to switch between Mac and Windows. Hopefully, this resolves it.">
       <created>1386658006964</created>
@@ -461,11 +457,15 @@
       <created>1386874070287</created>
       <updated>1386874070287</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed a lot of the combat math and created some methods for handling them.">
+      <created>1386876229990</created>
+      <updated>1386876229990</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4011000" />
+    <option name="totallyTimeSpent" value="4072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1420" height="790" extended-state="0" />
@@ -520,7 +520,8 @@
     <MESSAGE value="Added buttons for saving and resting. They are having odd behaviors in respect to how they are disabling upon combat sequence. Going to check the behavior on my PC later to see if it's a mac thing. AWT on mac has been an unpleasant experience." />
     <MESSAGE value="Added Resting Functionality. 1/6 chance that a monster will appear. Think of maybe a better way that the player can be informed of the new monster. Maybe add a test spot right above the save., rest buttons. This can also be used to verify a successful save. And a little readout. Removeing the string would be a little annoying, but not at all difficult." />
     <MESSAGE value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
-    <option name="LAST_COMMIT_MESSAGE" value="Direction buttons are a bit better. Looked pretty bad on Windows. Using arrows and placed them logically around." />
+    <MESSAGE value="Fixed a lot of the combat math and created some methods for handling them." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a lot of the combat math and created some methods for handling them." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -815,6 +816,29 @@
         <state line="48" column="7" selection-start="958" selection-end="958" vertical-scroll-proportion="0.6453901" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <folding>
+            <element signature="e#476#477#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="578" column="228" selection-start="26318" selection-end="26318" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="159" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3585">
@@ -840,35 +864,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="0" selection-start="4335" selection-end="4335" vertical-scroll-proportion="0.0" vertical-offset="2010" max-vertical-offset="2700">
+        <state line="191" column="42" selection-start="4879" selection-end="4879" vertical-scroll-proportion="0.6069869" vertical-offset="2242" max-vertical-offset="2700">
           <folding>
             <element signature="e#4292#4293#0" expanded="true" />
             <element signature="e#4333#4334#0" expanded="true" />
             <element signature="e#4658#4659#0" expanded="true" />
             <element signature="e#4688#4689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="578" column="228" selection-start="26318" selection-end="26318" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10980">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="159" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="460" selection-end="460" vertical-scroll-proportion="0.55676854" vertical-offset="0" max-vertical-offset="458">
-          <folding>
-            <element signature="e#476#477#0" expanded="true" />
           </folding>
         </state>
       </provider>
