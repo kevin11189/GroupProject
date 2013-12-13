@@ -6,11 +6,10 @@ public class Main {
 	public static void main(String[] args) {
 		titleScreen = new TitleScreen();
 	}
-	public static void newGame(boolean load) {
+	public static void newGame( boolean load) {
 		party = new Party(3, load);
 		monster = new Monster();
 		window = new Window(party);
-
 	}
 	public static Window getWindow() {
 		return window;

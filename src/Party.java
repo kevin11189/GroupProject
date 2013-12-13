@@ -4,12 +4,13 @@ import java.util.Random;
 public class Party {
 
 	private Hero[] party;
-	private int x, y, randomPlayer, roomsTraveled;
+	private int x, y, numberOfPlayers, randomPlayer, roomsTraveled;
 	private boolean running;
 	private boolean successfulGoldPickup;
 	private Random random = new Random();
 	public Party(int players, boolean load) {
 		party = new Hero[players];
+		numberOfPlayers = players;
 		x = 1;
 		y = 1;
 		roomsTraveled = 0;
@@ -155,7 +156,9 @@ public class Party {
 	}
 	public void partyRest() {
 		for (Hero aParty : party) {
-			aParty.addHealth(1);
+			if (aParty.isHeroAlive()) {
+				aParty.addHealth(1);
+			}
 		}
 		if (random.nextInt(6) == 0) {
 			Main.newMonster();

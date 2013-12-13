@@ -54,6 +54,7 @@ public class TitleScreen extends JFrame {
 
 	private class newGameListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
+
 			Main.newGame(false);
 			frame.setVisible(false);
 		}
@@ -66,6 +67,7 @@ public class TitleScreen extends JFrame {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
+			frame.setVisible(false);
 			Main.getWindow().updateAfterLoad();
 
 		}

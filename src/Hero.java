@@ -17,9 +17,9 @@ public class Hero {
 	public Hero(String n) {
 		heroName = n;
 		heroHealth = 20;
-		heroStrength = random.nextInt(19) + 1;
-		heroIntelligence = random.nextInt(19) + 1;
-		heroAgility = random.nextInt(19) + 1;
+		heroStrength = (random.nextInt(6) + 1) * 3;
+		heroIntelligence = (random.nextInt(6) + 1) * 3;
+		heroAgility = (random.nextInt(6) + 1) * 3;
 		heroArmor = 0;
 		heroWeapon = 0;
 		heroGold = 0;
@@ -126,11 +126,17 @@ public class Hero {
 		} else if ( i == 6 ) {
 			h.equipArmor(3);
 		} else if ( i == 7 ) {
-			h.addHealth(1);
+			if (h.isHeroAlive()) {
+				h.addHealth(1);
+			}
 		} else if ( i == 8 ) {
-			h.addHealth(2);
+			if (h.isHeroAlive()) {
+				h.addHealth(2);
+			}
 		} else if ( i == 9 ) {
-			h.addHealth(3);
+			if (h.isHeroAlive()) {
+				h.addHealth(3);
+			}
 		}
 		Main.getWindow().stopEquip();
 		Main.getWindow().changeStats(Main.getParty());

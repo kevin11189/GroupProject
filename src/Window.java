@@ -15,8 +15,6 @@ public class Window extends JFrame {
 	private JLabel goldLoot, equipmentLoot;
 	private JButton buttonUp, buttonDown, buttonRight, buttonLeft, buttonFight, buttonRun, equipOne, equipTwo, equipThree, equipNone, saveButton, restButton;
 	public Window(Party p) {
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//My IDE was yelling at me. It still ran, but for some reason it wants WindowConstants instead of JFrame
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		addComponentsToPane(frame.getContentPane(), p);
 		frame.pack();
@@ -363,11 +361,11 @@ public class Window extends JFrame {
 		buttonDown.addActionListener(new directionListenerDown());
 		directionPanel.add(buttonDown);
 		buttonLeft = new JButton("\u2190");
-		buttonLeft.setBounds(0, 35, 50, 30);
+		buttonLeft.setBounds(0, 37, 50, 30);
 		buttonLeft.addActionListener(new directionListenerLeft());
 		directionPanel.add(buttonLeft);
 		buttonRight = new JButton("\u2192");
-		buttonRight.setBounds(60, 35, 50, 30);
+		buttonRight.setBounds(60, 37, 50, 30);
 		buttonRight.addActionListener(new directionListenerRight());
 		directionPanel.add(buttonRight);
 
@@ -521,7 +519,7 @@ public class Window extends JFrame {
 				goldLoot.setText(Main.getParty().getHero(Main.getParty().getRandomPlayer()).getHeroName() + " gets " + Main.getMonster().getMonsterGold() + " gold.");
 				goldLoot.setForeground(Color.GREEN);
 			} else {
-				goldLoot.setText(Main.getParty().getHero(Main.getParty().getRandomPlayer()).getHeroName() + " FAILED to get " + Main.getMonster().getMonsterGold() + " gold.");
+				goldLoot.setText(Main.getParty().getHero(Main.getParty().getRandomPlayer()).getHeroName() + " failed to get " + Main.getMonster().getMonsterGold() + " gold.");
 				goldLoot.setForeground(Color.RED);
 			}
 		} else {
@@ -538,7 +536,7 @@ public class Window extends JFrame {
 			player2Damage.setText(Main.getParty().getHero(2).getHeroName() + " is running.");
 			if (Main.getMonster().isMonsterAttacked()) {
 				if (Main.getMonster().isMonsterHit()) {
-					monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget() + " for " + (int)Math.round((double)Main.getMonster().getMonsterStrength()/3.0));//attacked hit
+					monsterDamage.setText(Main.getMonster().getMonsterName() + " attacks " + Main.getMonster().getMonsterTarget().getHeroName() + " for " + (int)Math.round((double)Main.getMonster().getMonsterStrength()/3.0));//attacked hit
 				} else {
 					monsterDamage.setText(Main.getMonster().getMonsterName() + " missed.");//attacked missed
 				}
@@ -613,9 +611,15 @@ public class Window extends JFrame {
 		buttonRun.setEnabled(true);
 	}
 	public void startEquip() {
-		equipOne.setEnabled(true);
-		equipTwo.setEnabled(true);
-		equipThree.setEnabled(true);
+		if (Main.getParty().getHero(0).isHeroAlive()) {
+			equipOne.setEnabled(true);
+		}
+		if (Main.getParty().getHero(1).isHeroAlive()) {
+			equipTwo.setEnabled(true);
+		}
+		if (Main.getParty().getHero(2).isHeroAlive()) {
+			equipThree.setEnabled(true);
+		}
 		equipNone.setEnabled(true);
 	}
 	public void stopEquip() {
